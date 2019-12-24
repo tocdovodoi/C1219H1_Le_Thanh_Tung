@@ -1,0 +1,3 @@
+//Cách sao chép (clone) một Repository có sẵn từ GitHub về máy của mình
+//Vào thư mục cần lưu, chuột phải chọn Git Bash Here gõ dòng lệnh
+//git clone đường link
