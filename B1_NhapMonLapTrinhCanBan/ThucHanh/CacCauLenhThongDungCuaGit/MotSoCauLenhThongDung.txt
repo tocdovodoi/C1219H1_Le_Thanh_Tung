@@ -1,0 +1,7 @@
+git clone			Sao chép mộtt repository
+git init			Khởi tạo một repository
+git add				Đưa file vào trong vùng staged
+git add .			Đưa tất cả file vào trong vùng staged
+git commit			Ghi nhận thay đổi
+git push			Đưa các thay đổi từ local repository lên remote repository
+git pull			Đưa các thay đổi từ remote repository về local repository
