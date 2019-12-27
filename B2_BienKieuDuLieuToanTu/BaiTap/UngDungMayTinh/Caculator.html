@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng máy tính</title>
+</head>
+<body>
+<form>
+    <h1>Caculator</h1>
+    Nhập số thứ nhất
+    <br>
+    <input type="number" id ="a">
+    <br>
+    Nhập số thứ hai
+    <br>
+    <input type="number" id ="b">
+    <br>
+    <br>
+    <button onclick="tinhTong(); return false;">Tính tổng</button>
+    <button onclick="tinhHieu(); return false;">Tính hiệu</button>
+    <button onclick="tinhTich(); return false;">Tính tích</button>
+    <button onclick="tinhThuong(); return false;">Tính thương</button>
+    <br>
+</form>
+<p id ="ketQua"></p>
+    <script>
+        function tinhTong() {
+            let  a = parseInt(document.getElementById("a").value);
+            let  b = parseInt(document.getElementById("b").value);
+            let ketQua = document.getElementById("ketQua");
+                ketQua.innerText= a+b;
+        }
+        function tinhHieu() {
+            let  a = document.getElementById("a").value;
+            let  b = document.getElementById("b").value;
+            let ketQua = document.getElementById("ketQua");
+            ketQua.innerText= a-b;
+        }
+        function tinhTich() {
+            let  a = document.getElementById("a").value;
+            let  b = document.getElementById("b").value;
+            let ketQua = document.getElementById("ketQua");
+            ketQua.innerText= a*b;
+        }
+        function tinhThuong() {
+            let  a = document.getElementById("a").value;
+            let  b = document.getElementById("b").value;
+            let ketQua = document.getElementById("ketQua");
+            ketQua.innerText= a/b;
+        }
+    </script>
+</body>
+</html>
