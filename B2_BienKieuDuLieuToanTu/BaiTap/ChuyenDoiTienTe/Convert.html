@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi tiền tệ</title>
+</head>
+<body>
+<form>
+    Số tiền :
+    <input type="number" id="soTien">
+
+    Từ :
+    <select id="chonTu">
+        <option value="VN">Việt Nam</option>
+        <option value="US">Đô la</option>
+    </select>
+
+    Sang :
+    <select id="chonSang">
+        <option value="US">Đô la</option>
+        <option value="VN">Việt Nam</option>
+    </select>
+    <button onclick="chuyenDoi(); return false;">Chuyển đổi</button>
+</form>
+<p id ="ketQua"></p>
+<script>
+    function chuyenDoi() {
+        let soTien = parseInt(document.getElementById("soTien").value);
+        let chonTu = document.getElementById("chonTu").value;
+        let chonSang = document.getElementById("chonSang").value;
+        let ketQua = document.getElementById("ketQua");
+        // if (typeof soTien !="number") {
+        //     ketQua.innerText = "Vui lòng nhập lại số tiền";
+        //     return;
+        // }
+        if (chonTu == "VN" && chonSang == "US") {
+            ketQua.innerText=soTien/23000;
+        } else if (chonTu == "US" && chonSang == "VN") {
+            ketQua.innerText = soTien * 23000;
+        } else {
+            ketQua.innerText = soTien;
+        }
+    }
+</script>
+</body>
+</html>
