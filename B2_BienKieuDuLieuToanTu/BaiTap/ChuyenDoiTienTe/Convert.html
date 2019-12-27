@@ -25,12 +25,12 @@
 <p id ="ketQua"></p>
 <script>
     function chuyenDoi() {
-        let soTien = parseInt(document.getElementById("soTien").value);
+        let soTien = document.getElementById("soTien").value;
         let chonTu = document.getElementById("chonTu").value;
         let chonSang = document.getElementById("chonSang").value;
         let ketQua = document.getElementById("ketQua");
-        // if (typeof soTien !="number") {
-        //     ketQua.innerText = "Vui lòng nhập lại số tiền";
+        // if (typeof parseInt(soTien) !="number") {
+        //     text = "Vui lòng nhập lại số tiền";
         //     return;
         // }
         if (chonTu == "VN" && chonSang == "US") {
