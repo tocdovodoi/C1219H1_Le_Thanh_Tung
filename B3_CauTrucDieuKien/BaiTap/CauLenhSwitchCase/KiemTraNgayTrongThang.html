@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra số ngày trong tháng</title>
+</head>
+<body>
+<form>
+    Nhập tháng:
+    <br>
+    <input name="month" type="number">
+    <button onclick="calculator(); return false;">Tính số ngày</button>
+</form>
+<p id="ketQua"></p>
+<script>
+    function calculator() {
+        let month = document.getElementById("month").value;
+        let ketQua = document.getElementById("ketQua");
+        switch (month) {
+            case 1:
+            case 3:
+            case 5:
+            case 7:
+            case 8:
+            case 10:
+            case 12:
+                ketQua.innerText = "Tháng " + month + " có 31 ngày!";
+                break;
+            case 4:
+            case 6:
+            case 9:
+            case 11:
+                ketQua.innerText = "Tháng " + month + " có 30 ngày!";
+                break;
+            case 2:
+                let year = parseInt(prompt("Vui lòng nhập năm: "));
+                if (year % 400 == 0 || (year % 4 == 0 && year % 100 != 0)) {
+                    ketQua.innerText = "Tháng " + month + " có 29 ngày!";
+                } else {
+                    ketQua.innerText = "Tháng " + month + " có 28 ngày!";
+                }
+                break;
+            default:
+                ketQua.innerText = "Tháng không hợp lệ!";
+        }
+
+
+    }
+
+</script>
+</body>
+</html>
