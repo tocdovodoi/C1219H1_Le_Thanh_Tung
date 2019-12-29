@@ -7,7 +7,7 @@
 <body>
 <form>
     Số tiền :
-    <input type="number" id="soTien">
+    <input type="text" id="soTien">
 
     Từ :
     <select id="chonTu">
@@ -22,19 +22,16 @@
     </select>
     <button onclick="chuyenDoi(); return false;">Chuyển đổi</button>
 </form>
-<p id ="ketQua"></p>
+<p id="ketQua"></p>
 <script>
     function chuyenDoi() {
         let soTien = document.getElementById("soTien").value;
         let chonTu = document.getElementById("chonTu").value;
         let chonSang = document.getElementById("chonSang").value;
         let ketQua = document.getElementById("ketQua");
-        // if (typeof parseInt(soTien) !="number") {
-        //     text = "Vui lòng nhập lại số tiền";
-        //     return;
-        // }
+
         if (chonTu == "VN" && chonSang == "US") {
-            ketQua.innerText=soTien/23000;
+            ketQua.innerText = soTien / 23000;
         } else if (chonTu == "US" && chonSang == "VN") {
             ketQua.innerText = soTien * 23000;
         } else {
