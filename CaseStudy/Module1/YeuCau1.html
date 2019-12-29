@@ -17,7 +17,7 @@
     let typeRoom = prompt("Enter Type Room: ");
     let rentDays = prompt("Enter Rent Days: ");
     let typeService = prompt("Enter Type Service: ");
-    let totalPays = 500* Number.parseInt(rentDays)*(1-discount)/100;
+    let totalPays = 500* Number.parseInt(rentDays)*(1-Number.parseFloat(discount)/100);
     //Hiển thị thông tin
     alert("Information Of Customer: \n" +
             "Name: " + nameCustomer +
