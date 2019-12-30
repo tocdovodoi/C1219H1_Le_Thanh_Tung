@@ -10,57 +10,43 @@
     <input style="height:30px;width:149px" id="ketQua">
     <br>
     <button value="1" style="height:35px;width:35px" type="button" onclick="nhapDuLieu(this.value)">1</button>
-    <button value="2" style="height:35px;width:35px" type="button" onclick="nhapDuLieu(this.value)">2</button>
-    <button value="3" style="height:35px;width:35px" type="button" onclick="nhapDuLieu(this.value)">3</button>
-    <button style="height:35px;width:35px" type="button" onclick="cong()">+</button>
+    <button value="2" style="height:35px;width:35px" type="button" onclick="nhapDuLieu(value)">2</button>
+    <button value="3" style="height:35px;width:35px" type="button" onclick="nhapDuLieu(value)">3</button>
+    <button value="+" style="height:35px;width:35px" type="button" onclick="nhapDuLieu(value)">+</button>
     <br>
-    <button value="4" style="height:35px;width:35px" type="button" onclick="nhapDuLieu(this.value)">4</button>
-    <button value="5" style="height:35px;width:35px" type="button" onclick="nhapDuLieu(this.value)">5</button>
-    <button value="6" style="height:35px;width:35px" type="button" onclick="nhapDuLieu(this.value)">6</button>
-    <button style="height:35px;width:35px" type="button" onclick="tru()">-</button>
+    <button value="4" style="height:35px;width:35px" type="button" onclick="nhapDuLieu(value)">4</button>
+    <button value="5" style="height:35px;width:35px" type="button" onclick="nhapDuLieu(value)">5</button>
+    <button value="6" style="height:35px;width:35px" type="button" onclick="nhapDuLieu(value)">6</button>
+    <button value="-" style="height:35px;width:35px" type="button" onclick="nhapDuLieu(value)">-</button>
     <br>
-    <button value="7" style="height:35px;width:35px" type="button" onclick="nhapDuLieu(this.value)">7</button>
-    <button value="8" style="height:35px;width:35px" type="button" onclick="nhapDuLieu(this.value)">8</button>
-    <button value="9" style="height:35px;width:35px" type="button" onclick="nhapDuLieu(this.value)">9</button>
-    <button style="height:35px;width:35px" type="button" onclick="nhan()">*</button>
+    <button value="7" style="height:35px;width:35px" type="button" onclick="nhapDuLieu(value)">7</button>
+    <button value="8" style="height:35px;width:35px" type="button" onclick="nhapDuLieu(value)">8</button>
+    <button value="9" style="height:35px;width:35px" type="button" onclick="nhapDuLieu(value)">9</button>
+    <button value="*" style="height:35px;width:35px" type="button" onclick="nhapDuLieu(value)">*</button>
     <br>
     <button style="height:35px;width:35px" type="button" onclick="xoa()">C</button>
-    <button value="0" style="height:35px;width:35px" type="button" onclick="nhapDuLieu(this.value)">0</button>
+    <button value="0" style="height:35px;width:35px" type="button" onclick="nhapDuLieu(value)">0</button>
     <button style="height:35px;width:35px" type="button" onclick="bang()">=</button>
-    <button style="height:35px;width:35px" type="button" onclick="chia()">/</button>
+    <button value="/" style="height:35px;width:35px" type="button" onclick="nhapDuLieu(value)">/</button>
     <br>
-
 </form>
-
+<!--Phương thức eval() có chức năng tính toán biểu thức toán học hoặc thực thi mã lệnh tùy thuộc vào tham số
+    mà người dùng truyền vào khi khởi tạo phương thức.-->
+<!--Nếu tham số truyền vào là một biểu thức toán học, phương thức sẽ tính toàn và trả về kết quả của biểu thức đó-->
 <script>
-
-
-    function nhapDuLieu(giaTri) { //giaTri gọi là tham số
-        let ketQua = document.getElementById("ketQua");
-        ketQua.value = giaTri;
+    //Hàm nhập dữ liệu
+    function nhapDuLieu(value) {
+        document.getElementById("ketQua").value += value;
     }
-
-    function cong() {
-
-    }
-
-
+    //Hàm xoá
     function xoa() {
-
+        document.getElementById("ketQua").value = "";
     }
-
+    //Hàm =
     function bang() {
-
+        document.getElementById("ketQua").value = eval(document.getElementById("ketQua").value);
+        return document.getElementById("ketQua").value;
     }
-
-
-    // function tinhThuong() {
-    //     let  a = document.getElementById("a").value;
-    //     let  b = document.getElementById("b").value;
-    //     let ketQua = document.getElementById("ketQua");
-    //     ketQua.innerText= a/b;
-    // }
-
 </script>
 </body>
 </html>
