@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+<body>
+<script>
+    // Bài 6: Tính hoa hồng nhận được tuỳ theo mức doanh số bán hàng
+    let doanhSo = prompt("Nhập doanh số bán hàng: ");
+
+    if (doanhSo > 8000) {
+        alert("Doanh số " + doanhSo + " mức hoa hồng = " + doanhSo * 5 / 100);
+    } else if (doanhSo >= 7000 && doanhSo < 8000) {
+        alert("Doanh số " + doanhSo + " mức hoa hồng = " + doanhSo * 4 / 100);
+    } else if (doanhSo >= 4000 && doanhSo < 7000) {
+        alert("Doanh số " + doanhSo + " mức hoa hồng = " + doanhSo * 3 / 100);
+    } else if (doanhSo >= 0 && doanhSo < 4000) {
+        alert("Doanh số " + doanhSo + " mức hoa hồng = 0 ");
+    } else {
+        alert("Nhập sai!");
+    }
+</script>
+</body>
+</html>

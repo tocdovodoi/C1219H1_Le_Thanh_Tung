@@ -5,76 +5,53 @@
     <title>Máy tính đơn giản</title>
 </head>
 <body>
-    <form>
-        <h1 style="color: blueviolet">Caculator</h1>
-        -----------------------------<br>
-        <button style="height:35px;width:35px" type="button" onclick="mot()">1</button>
-        <button style="height:35px;width:35px" type="button" onclick="hai()">2</button>
-        <button style="height:35px;width:35px" type="button" onclick="ba()">3</button>
-        <button style="height:35px;width:35px" type="button" onclick="cong()">+</button><br>
-        <button style="height:35px;width:35px" type="button" onclick="bon()">4</button>
-        <button style="height:35px;width:35px" type="button" onclick="nam()">5</button>
-        <button style="height:35px;width:35px" type="button" onclick="sau()">6</button>
-        <button style="height:35px;width:35px" type="button" onclick="tru()">-</button><br>
-        <button style="height:35px;width:35px" type="button" onclick="bay()">7</button>
-        <button style="height:35px;width:35px" type="button" onclick="tam()">8</button>
-        <button style="height:35px;width:35px" type="button" onclick="chin()">9</button>
-        <button style="height:35px;width:35px" type="button" onclick="nhan()">*</button><br>
-        <button style="height:35px;width:35px" type="button" onclick="xoa()">C</button>
-        <button style="height:35px;width:35px" type="button" onclick="khong()">0</button>
-        <button style="height:35px;width:35px" type="button" onclick="bang()">=</button>
-        <button style="height:35px;width:35px" type="button" onclick="chia()">/</button><br>
+<form>
+    <h1 style="color: blueviolet">Caculator</h1>
+    <input style="height:30px;width:149px" id="ketQua">
+    <br>
+    <button value="1" style="height:35px;width:35px" type="button" onclick="nhapDuLieu(this.value)">1</button>
+    <button value="2" style="height:35px;width:35px" type="button" onclick="nhapDuLieu(this.value)">2</button>
+    <button value="3" style="height:35px;width:35px" type="button" onclick="nhapDuLieu(this.value)">3</button>
+    <button style="height:35px;width:35px" type="button" onclick="cong()">+</button>
+    <br>
+    <button value="4" style="height:35px;width:35px" type="button" onclick="nhapDuLieu(this.value)">4</button>
+    <button value="5" style="height:35px;width:35px" type="button" onclick="nhapDuLieu(this.value)">5</button>
+    <button value="6" style="height:35px;width:35px" type="button" onclick="nhapDuLieu(this.value)">6</button>
+    <button style="height:35px;width:35px" type="button" onclick="tru()">-</button>
+    <br>
+    <button value="7" style="height:35px;width:35px" type="button" onclick="nhapDuLieu(this.value)">7</button>
+    <button value="8" style="height:35px;width:35px" type="button" onclick="nhapDuLieu(this.value)">8</button>
+    <button value="9" style="height:35px;width:35px" type="button" onclick="nhapDuLieu(this.value)">9</button>
+    <button style="height:35px;width:35px" type="button" onclick="nhan()">*</button>
+    <br>
+    <button style="height:35px;width:35px" type="button" onclick="xoa()">C</button>
+    <button value="0" style="height:35px;width:35px" type="button" onclick="nhapDuLieu(this.value)">0</button>
+    <button style="height:35px;width:35px" type="button" onclick="bang()">=</button>
+    <button style="height:35px;width:35px" type="button" onclick="chia()">/</button>
+    <br>
 
-    </form>
-    <p id ="ketQua"></p>
+</form>
 
 <script>
 
-    function mot() {
 
+    function nhapDuLieu(giaTri) { //giaTri gọi là tham số
+        let ketQua = document.getElementById("ketQua");
+        ketQua.value = giaTri;
     }
-    function hai() {
 
-    }
-    function ba() {
-
-    }
-    function bon() {
-
-    }function nam() {
-
-    }function sau() {
-
-    }function bay() {
-
-    }function tam() {
-
-    }
-    function chin() {
-
-    }
-    function khong() {
-
-    }
     function cong() {
 
     }
-    function tru() {
 
-    }
-    function nhan() {
 
-    }
-    function chia() {
-
-    }
     function xoa() {
 
     }
+
     function bang() {
 
     }
-
 
 
     // function tinhThuong() {

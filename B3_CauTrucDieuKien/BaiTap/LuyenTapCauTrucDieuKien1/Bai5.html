@@ -5,12 +5,23 @@
     <title>Bài 5</title>
 </head>
 <body>
-<p id="result">
-<script>
-    // Bài 5: Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ
-    //result = diemKt*0.3+diemGiuaKy*0.3+diemCuoiKy*0.4
-    let diemKt = parseFloat(prompt())
-
-</script>
+    <script>
+        // Bài 5: Xếp hạng học lực của học sinh dựa trên các điểm bài kiểm tra, điểm thi giữa kỳ, điểm thi cuối kỳ
+        let diemKt = parseFloat(prompt("Nhập điểm kiểm tra"));
+        let diemGiuaKy = parseFloat(prompt("Nhập điểm giữa kỳ"));
+        let diemCuoiKy = parseFloat(prompt("Nhập điểm cuối kỳ"));
+        result = diemKt * 0.4 + ((diemGiuaKy + diemCuoiKy) / 2) * 0.6;
+        if (result > 8.0 && result <= 10) {
+            alert("Điểm " + result + " xếp loại Giỏi");
+        } else if (result >= 7 && result < 8) {
+            alert("Điểm " + result + " xếp loại Khá");
+        } else if (result >= 4 && result < 7) {
+            alert("Điểm " + result + " xếp loại Trung bình");
+        } else if (result >= 0 && result < 4) {
+            alert("Điểm " + result + " xếp loại Yếu");
+        } else {
+            alert("Nhập sai! Vui lòng nhập điểm từ 0 - 10");
+        }
+    </script>
 </body>
 </html>
