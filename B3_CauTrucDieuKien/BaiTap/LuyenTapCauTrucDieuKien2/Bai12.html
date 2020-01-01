@@ -9,41 +9,23 @@
     //Bài 12: Viết chương trình tính lãi ngân hàng (lãi mẹ đẻ lại con) khi biết số tiền ban đầu,
     // số tháng cho vay và lãi xuất hàng tháng.
     // Ví dụ: lãi ngân hàng 12%/12 tháng = 1%/ 1 tháng
-    // let tienGui = parseFloat(prompt("Nhập số tiền cần gửi (đơn vị triệu đồng)"));
-    // let soThang = parseInt(prompt("Nhập số tháng gửi"));
-    // document.write("Bạn đã gửi " + tienGui + " triệu, trong " + soThang + " tháng!" + "<br>");
-    // if (tienGui > 0 && soThang >= 1) {
-    //     //ví dụ: gửi 10tr trong 2 tháng
-    //     //tháng 1: 10 + 10*0.1   = 11tr
-    //     //tháng 2: (10 + 10*0.1) + (10 + 10*0.1)*0.1 = 12,1tr
-    //     for (let i = 1; i <= soThang; i++) {
-    //         tienGui =  tienGui + tienGui * 0.1;
-    //     }
-    //     document.write("Tổng số tiền hiện có = " + tienGui + " triệu đồng.");
-    // } else {
-    //     document.write("Nhập sai");
-    // }
-    // document.write("Tổng số tiền lãi = " + tienGui + " triệu đồng.");
 
     let tienGui = parseFloat(prompt("Nhập số tiền cần gửi (đơn vị triệu đồng)"));
     let soThang = parseInt(prompt("Nhập số tháng gửi"));
     document.write("Bạn đã gửi " + tienGui + " triệu, trong " + soThang + " tháng!" + "<br>");
-    let tongTien;
+    let tongTien = tienGui;
     if (tienGui > 0 && soThang >= 1) {
         //ví dụ: gửi 10tr trong 2 tháng
         //tháng 1: 10 + 10*0.01   = 10.100 tr
         //tháng 2: 10.1 + 10.1*0.01 = 10.201 tr
-        tongTien = tienGui;
         for (let i = 1; i <= soThang; i++) {
             tongTien = tongTien + tongTien * 0.01;
         }
-        document.write("Tổng số tiền hiện có = " + parseFloat(tongTien) + " triệu đồng." + "<br>");
-        document.write("Tổng số tiền lãi = " + parseFloat(  tongTien - tienGui) + " triệu đồng.");
+        document.write("Tổng số tiền hiện có = " + parseFloat(tongTien).toFixed(3) + " triệu đồng." + "<br>");
+        document.write("Tổng số tiền lãi = " + parseFloat(tongTien - tienGui).toFixed(3) + " triệu đồng.");
     } else {
         document.write("Nhập sai");
     }
-
-
 </script>
 </body>
 </html>
