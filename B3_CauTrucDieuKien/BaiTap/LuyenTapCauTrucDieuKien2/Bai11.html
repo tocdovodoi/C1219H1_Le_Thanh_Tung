@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 11</title>
+</head>
+<p id="thue"></p>
+<body>
+<script>
+    //Bài 11: Viết chương trình tính thuế thu nhập cá nhân.
+    let luong = prompt("Nhập lương của bạn");
+    if (luong > 8) {
+        thue.innerText = "Lương " + luong + "  triệu, thuế thu nhập cá nhân = " + luong * 5000 / 100 + " ngàn đồng.";
+    } else if (luong >= 7 && luong < 8) {
+        thue.innerText = "Lương " + luong + " triệu, thuế thu nhập cá nhân = " + luong * 4000 / 100 + " ngàn đồng.";
+    } else if (luong >= 4 && luong < 7) {
+        thue.innerText = "Lương " + luong + " triệu, thuế thu nhập cá nhân = " + luong * 3000 / 100 + " ngàn đồng.";
+    } else if (luong >= 0 && luong < 4) {
+        thue.innerText = "Lương " + luong + " triệu, thuế thu nhập cá nhân = 0 ";
+    } else {
+        thue.innerText = "Nhập sai!";
+    }
+</script>
+</body>
+</html>

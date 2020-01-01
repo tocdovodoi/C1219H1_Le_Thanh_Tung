@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<p id="checkAge"></p>
+<body>
+<script>
+    //Bài 8: Kiểm tra xem một số nhập vào có phải là tuổi của một người không.
+    // Một số nguyên là tuổi của một người khi nhỏ 120 và lơn hơn 0.
+    let age = prompt("Nhập tuổi của bạn!");
+    checkAge.innerText = age % (parseInt(age)) + " là kiểu " + typeof (age);
+    if (age > 0 && age <= 120 && age % (parseInt(age)) == 0) {
+        checkAge.innerHTML = "Tuổi hợp lệ!";
+    } else {
+        checkAge.innerHTML = "Tuổi không hợp lệ!";
+    }
+</script>
+</body>
+</html>
