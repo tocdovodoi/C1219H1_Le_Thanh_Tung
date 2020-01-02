@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<script>
+    //Bài 2: Viết chương trình nhập vào một số bất kỳ lớn hơn 0.
+    // Tính tổng các phần tử từ 1 đến số vừa nhập vào.
+    let number = parseInt(prompt("Nhập một số nguyên dương bất kỳ"));
+    let tongNumber = 0;
+    for (let i = 1; i <= number; i++) {
+        tongNumber+=i;
+    }
+    document.write("Tổng các số từ 1 đến " + number + " = " + tongNumber);
+</script>
+</body>
+</html>
