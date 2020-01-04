@@ -2,15 +2,17 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Bài 3</title>
+    <title>Bài 5</title>
 </head>
 <body>
 <script>
-    //Bài 3: Hiển thị ra 20 số trong dãy fibonacci đầu tiên.
-    document.write("20 số fibonacci đầu tiên: 1-" );
+    //Bài 5: Tính tổng của 20 số đầu tiên trong dãy fibonacci.
+    document.write("Tổng của 20 số fibonacci đầu tiên bằng: ");
+    let sum = 0;
     for (let i = 1; i < 20; i++) {
-        document.write(checkFibonacci(i)+ "-");
+        sum += checkFibonacci(i);
     }
+    document.write(sum);
 
     //Hàm kiểm tra số nguyên tố
     function checkFibonacci(n) {
@@ -20,7 +22,6 @@
             return checkFibonacci(n - 1) + checkFibonacci(n - 2);
         }
     }
-
 </script>
 </body>
 </html>

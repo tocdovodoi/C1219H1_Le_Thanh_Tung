@@ -11,13 +11,13 @@
     let count = 0;
     document.write("Các số nguyên tố đầu tiên: ");
     //Vòng for lặp vô hạn
-        for (let i = 2;; i++) {
-            if (checkSoNguyenTo(i) == true) {
-                document.write(i+ "-");
-                count++;
-            }
-            if(count==number) break;    //In đủ số nguyên tố là dừng vòng lặp
+    for (let i = 2; ; i++) {
+        if (checkSoNguyenTo(i) == true) {
+            document.write(i + "-");
+            count++;
         }
+        if (count == number) break;    //In đủ số nguyên tố là dừng vòng lặp
+    }
 
     //Hàm kiểm tra số nguyên tố
     function checkSoNguyenTo(n) {

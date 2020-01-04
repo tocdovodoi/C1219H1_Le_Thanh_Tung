@@ -2,14 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Bài 3</title>
+    <title>Bài 4</title>
 </head>
 <body>
 <script>
-    //Bài 3: Hiển thị ra 20 số trong dãy fibonacci đầu tiên.
-    document.write("20 số fibonacci đầu tiên: 1-" );
-    for (let i = 1; i < 20; i++) {
-        document.write(checkFibonacci(i)+ "-");
+    //Bài 4: Tìm số đầu tiên trong dãy fibonacci chia hết cho 5.
+    document.write("Số fibonacci đầu tiên chia hết cho 5 là số: ");
+
+    for (let i = 1; ; i++) {
+        if (checkFibonacci(i) % 5 == 0) {
+            document.write(checkFibonacci(i));
+            break;
+        }
     }
 
     //Hàm kiểm tra số nguyên tố
@@ -20,7 +24,6 @@
             return checkFibonacci(n - 1) + checkFibonacci(n - 2);
         }
     }
-
 </script>
 </body>
 </html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 8</title>
+</head>
+<body>
+<form>
+    <h1 style="color: blueviolet">Game đoán số</h1>
+    <button id="start" style="height: 35px;width:100px" type="button" onclick="doanSo()">Chơi</button>
+    <br>
+</form>
+<script>
+    //Bài 8: Game đoán số
+    alert("Chào mừng bạn tới game đoán số, bạn chỉ được đoán 3 lần!");
+
+    function doanSo() {
+        let numberStart = parseInt(prompt("Mời bạn nhập số trong khoảng từ: "));
+        let numberEnd = parseInt(prompt("đến: "));
+        let numberPlay = parseInt(prompt("Vui lòng dự đoán trong khoảng từ số " + numberStart + " đến số " + numberEnd));
+        let random = Math.floor(Math.random() * numberEnd) + numberStart;
+        let count = 1;
+        for (let i = 1; i <= 3; i++) {
+            if (numberPlay == random) {
+                alert("Số Random = " + random + ", bạn đã dự đoán đúng. End game!");
+                break;
+            } else {
+                if (numberPlay > random) {
+                    alert("Số bạn đoán lớn hơn số random");
+                    numberPlay = parseInt(prompt("Bạn đã đoán sai, vui lòng đoán lại: "));
+                    count++;
+                } else {
+                    alert("Số bạn đoán nhỏ hơn số random");
+                    numberPlay = parseInt(prompt("Bạn đã đoán sai, vui lòng đoán lại: "));
+                    count++;
+                }
+            }
+            if (count == 3) {
+                alert("Bạn đã đoán sai cả 3 lần!");
+                break;
+            }
+        }
+    }
+</script>
+</body>
+</html>
