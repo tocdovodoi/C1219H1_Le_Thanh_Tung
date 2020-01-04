@@ -24,20 +24,25 @@
             if (numberPlay == random) {
                 alert("Số Random = " + random + ", bạn đã dự đoán đúng. End game!");
                 break;
-            } else {
+            }
+            if (numberPlay != random) {
+                count++;
                 if (numberPlay > random) {
                     alert("Số bạn đoán lớn hơn số random");
                     numberPlay = parseInt(prompt("Bạn đã đoán sai, vui lòng đoán lại: "));
-                    count++;
                 } else {
                     alert("Số bạn đoán nhỏ hơn số random");
                     numberPlay = parseInt(prompt("Bạn đã đoán sai, vui lòng đoán lại: "));
-                    count++;
                 }
             }
             if (count == 3) {
-                alert("Bạn đã đoán sai cả 3 lần!");
-                break;
+                if (numberPlay == random) {
+                    alert("Số Random = " + random + ", bạn đã dự đoán đúng. End game!");
+                    break;
+                } else {
+                    alert("Bạn đã đoán sai cả 3 lần!");
+                    break;
+                }
             }
         }
     }
