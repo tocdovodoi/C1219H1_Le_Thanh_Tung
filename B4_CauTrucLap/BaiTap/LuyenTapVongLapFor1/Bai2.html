@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<script>
+    //Bài 2: Sử dụng hàm prompt() để lấy thông tin nhiệt độ hiện tại được nhập bởi người truy cập.
+    // Nếu nhiệt độ nhập vào trên 100, yêu cầu người dùng giảm nhiệt độ.
+    // Nếu nhiệt độ dưới 20, yêu cầu người dùng tăng nhiệt độ.
+    var check = true;
+    do {
+        let choose = prompt("Mời bạn chọn chức năng: " +
+            "\n1. Nhập nhiệt độ" +
+            "\n2. Thoát");
+        switch (choose) {
+            case "1":
+                let nhietDo;
+                nhietDo = parseFloat(prompt("Nhập nhiệt độ hiện tại: "));
+                    while (nhietDo > 100) {
+                        nhietDo = parseFloat(prompt("Bạn phải giảm nhiệt độ: "));
+                    }
+                    while (nhietDo < 20) {
+                        nhietDo = parseFloat(prompt("Bạn phải tăng nhiệt độ: "));
+                    }
+                alert("Nhiệt độ hiện tại = " + nhietDo);
+                break;
+            case "2"  :
+                alert("Tạm biệt!");
+                check = false;
+                break;
+            default:
+                alert("Nhập sai!");
+        }
+    }
+    while (check) ;
+</script>
+</body>
+</html>

@@ -10,21 +10,22 @@
     let idCard = "192140068";
     let birthdayCustomer = "13/05/1989";
     let emailCustomer = "thanhtungspt@gmail.com";
-    let addressCustomer = "28 Ngô Xuân Thu - Liên Chiểu - Đà Nẵng";
+    let addressCustomer = "Đà Nẵng";
     let typeCustomer = "Diamond";
     let discount = 10;
     let numberOfAccompaying = 2;
     let typeRoom = "Bussiness";
     let rentDays = 10;
-    let typeService = "villa";
-    let totalPays = 500 * rentDays * (1 - discount) / 100;
+    let typeService = "Villa";
+    //let totalPays = 500 * rentDays * (1 - discount) / 100;
     //Tạo menu
     let i = "1";
     do {
         let choose = prompt(
             "1. Show information Customer.\n" +
             "2. Edit information Customer.\n" +
-            "3. Exit");
+            "3. Show the Amount to be paid after Discount.\n" +
+            "4. Exit");
         var checkChoose = true; //Thay vì khai báo let, phải khai báo var
         switch (choose) {
             case "1":
@@ -102,12 +103,63 @@
                     }
                 } while (checkEdit);
                 break;
-            case "3" :
+            case "3":
+                let moneyPerDays = 0;
+                let discountCondition = 0;
+                let currentYear = new Date().getFullYear();
+                let birthday = new Date(birthdayCustomer).getFullYear();
+                let ageCustomer = currentYear - birthday;
+                //Giảm giá theo Địa chỉ và tuổi
+                if (addressCustomer == "Đà Nẵng") {
+                    discountCondition += 20;
+                    if (ageCustomer >= 30) {
+                        discountCondition += 2;
+                    } else if (addressCustomer >= 20 && addressCustomer < 30) {
+                        discountCondition += 1;
+                    }
+                } else if (addressCustomer == "Huế") {
+                    discountCondition += 10;
+                } else if (addressCustomer == "Quảng Nam") {
+                    discountCondition += 5;
+                }
+
+                //Giảm giá theo thời gian lưu trú
+                if (rentDays > 7) {
+                    discountCondition += 30;
+                } else if (rentDays >= 5) {
+                    discountCondition += 20;
+                } else if (rentDays >= 2) {
+                    discountCondition += 10;
+                }
+
+                //Giảm giá theo loại Customer
+                if (typeCustomer == "Diamond") {
+                    discountCondition += 15;
+                } else if (typeCustomer == "Platium") {
+                    discountCondition += 10;
+                } else if (typeCustomer == "Gold") {
+                    discountCondition += 5;
+                } else if (typeCustomer = "Silver") {
+                    discountCondition += 2;
+                }
+
+                if (typeService === "Villa") {
+                    moneyPerDays = 500;
+                } else if (typeService === "House") {
+                    moneyPerDays = 300;
+                } else {
+                    moneyPerDays = 100;
+                }
+                let totalPays = moneyPerDays * rentDays * (1 - discount / 100);
+                totalPays -= discountCondition;
+                alert("Total Pays After Discountcondition: " + totalPays);
+                break;
+            case "4" :
                 alert("Tạm biệt!");
                 checkChoose = false;
                 break;
             default:
-                alert("Vui lòng chọn chức năng 1 - 3");
+                alert("Vui lòng chọn chức năng 1 - 4");
         }
     } while (checkChoose);
 </script>
