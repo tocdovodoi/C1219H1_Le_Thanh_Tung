@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tam Giác Vuông 2</title>
+</head>
+<body>
+<script>
+    //In tam giác vuông có dạng
+    //*****
+    //****
+    //***
+    //**
+    //*
+    let number = parseInt(prompt("Nhập cạnh của tam giác"));
+    let j = number;
+    while (j >= 1) {
+        for (let i = 1; i <= j; i++) {
+            document.write("*");
+        }
+        document.write("<br>");
+        j--;
+    }
+
+</script>
+</body>
+</html>

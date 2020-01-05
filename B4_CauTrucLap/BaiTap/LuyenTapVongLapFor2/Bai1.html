@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 1</title>
+</head>
+<body>
+<script>
+    //Bài 1: In dãy Finonaci
+    let number = parseInt(prompt("Bạn muốn in bao nhiêu số fibonacci?"));
+    document.write(number + " số fibonacci đầu tiên: 1-" );
+    for (let i = 1; i < number; i++) {
+        document.write(checkFibonacci(i)+ "-");
+    }
+
+    //Hàm kiểm tra số nguyên tố
+    function checkFibonacci(n) {
+        if (n == 1 || n == 2) {
+            return n;
+        } else {
+            return checkFibonacci(n - 1) + checkFibonacci(n - 2);
+        }
+    }
+
+</script>
+</body>
+</html>
