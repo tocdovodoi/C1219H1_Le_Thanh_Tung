@@ -8,51 +8,37 @@
 <p id="ketQua">
     <script>
         //Khia báo mảng n phần tử
-        let arr = [];   //Khai báo mảng rỗng
+        //let arr = []; //Khai báo mảng rỗng
         let doDai = parseInt(prompt("Vui lòng nhập số phần tử của mảng")); //Khai báo độ dài của mảng
+        let arr = new Array(doDai);   //Khai báo mảng number phần tử
         for (let i = 0; i < doDai; i++) {
             arr[i] = prompt("Nhập phần tử thứ " + (i + 1) + " "); //Nhập phần tử của mảng
         }
 
-        // var check = true;
-        // do {
-        //     let choose = prompt("Mời bạn chọn chức năng " +
-        //         "\n1. In mảng" +
-        //         "\n2. Nối chuỗi" +
-        //         "\n3. Sắp xếp mảng tăng dần" +
-        //         "\n4. Sắp xếp mảng giảm dần" +
-        //         "\n5. Thoát");
-        //     switch (choose) {
-        //         case "1":
-                    //In mảng vừa nhập
-                    document.write("Mảng bạn vừa nhập: ");
-                    for (let i = 0; i < arr.length; i++) {
-                        document.write(arr[i] + " ");
-                    }
-                //     break;
-                // case "2":
-                    //Nối chuỗi
-                    document.write("<br>" + "Chuyển các phần tử thành chuỗi và nối lại: ");
-                    document.write(arr.join(""));
-                    // break;
-                // case "3":
-                    //Sắp xếp mảng tăng dần
-                    document.write("<br>" + "Mảng sau khi được sắp xếp tăng dần: ");
-                    document.write(arr.sort().join());
-                //     break;
-                // case "4":
-                    //Sắp xếp mảng giảm dần
-                    document.write("<br>" + "Mảng sau khi được sắp xếp giảm dần: ");
-                    document.write(arr.reverse().join());
-                //     break;
-                // case "5":
-        //             document.write("Tạm biệt!");
-        //             check = false;
-        //             break;
-        //         default:
-        //             document.write("Vui lòng chọn chức năng 1 - 5");
-        //     }
-        // } while (check) ;
+        //In mảng vừa nhập
+        document.write("Mảng bạn vừa nhập: ");
+        for (let i = 0; i < arr.length; i++) {
+            document.write(arr[i] + " ");
+        }
+
+        //Nối chuỗi
+        document.write("<br>" + "Chuyển các phần tử thành chuỗi và nối lại: ");
+        document.write(arr.join(""));
+
+        //Sắp xếp mảng tăng dần
+        document.write("<br>" + "Mảng sau khi được sắp xếp tăng dần: ");
+        //document.write(arr.sort().join()); //Cách 1
+        document.write(arr.sort(function (a, b) {
+            return a - b;
+        })); //Cách 2
+
+        //Sắp xếp mảng giảm dần
+        document.write("<br>" + "Mảng sau khi được sắp xếp giảm dần: ");
+        // document.write(arr.reverse().join()); //Cách 1 phải sắp xếp giảm rồi mới đảo ngược dc
+        document.write(arr.sort(function (a, b) { //cách 2 sắp xếp được ngay
+            return b - a;
+        }));
+
     </script>
 </body>
 </html>
