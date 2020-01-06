@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm giá trị trong mảng</title>
+</head>
+<body>
+<script>
+    //Viết một chương trình JavaScript để tìm một giá tri được nhập vào từ hộp thoại
+    // có nằm trong mảng hay không. Nếu có in ra vị trí của phần tử đó.
+    let arr = [-3, 5, 1, 3, 1, 10];
+    let number = parseInt(prompt("Nhập số bạn muốn tìm?"));
+    document.write("Mảng ban đầu của bạn : ");
+    for (let i = 0; i < arr.length; i++) {
+        document.write(arr[i] + " ");
+    }
+    document.write("<br>" + "Bạn vừa nhập số " + number + "<br>");
+    let check = false;
+    document.write("  ");
+    for (let i = 0; i < arr.length; i++) {
+        if (number == arr[i]) {
+            document.write("Số này nằm ở vị trí thứ " +(i+1) +"<br>");
+            check = true;
+        }
+    }
+    if (check == false) {
+        document.write("Số bạn nhập không có trong mảng");
+    }
+</script>
+</body>
+</html>
