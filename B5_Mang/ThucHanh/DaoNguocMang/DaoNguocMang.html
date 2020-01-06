@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Đảo ngược mảng</title>
+</head>
+<body>
+<script>
+    let arr = [-3, 5, 1, 3, 2, 10];
+    document.write("Mảng ban đầu của bạn : ");
+    for (let i = 0; i < arr.length; i++) {
+        document.write(arr[i] + " ");
+    }
+    //Tạo mảng rỗng
+    let arrDaoNguoc = [];
+    //Gán phần tử cuối của arr = phần tử đầu của arrDaoNguoc
+    for (let i = arr.length-1; i >= 0; i--) {
+        arrDaoNguoc.push(arr[i]);
+    }
+    //In mảng mới
+    document.write("<br>" + "Mảng mới sau khi đảo ngược : ");
+    for (let i = 0; i < arrDaoNguoc.length; i++) {
+        document.write(arrDaoNguoc[i] + " ");
+    }
+</script>
+</body>
+</html>
