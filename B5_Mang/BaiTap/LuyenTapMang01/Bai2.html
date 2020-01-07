@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<script>
+    //Bài 2- Viết chương trình khởi tạo mảng số nguyên gồm 10 phần tử khác nhau.  (random)
+    // Chương trình hiển thị ra được phần tử có giá trị lớn nhất trong mảng và vị trí của phần tử đó.
+
+    let arr = new Array(10);
+    let numberStart = parseInt(prompt("Mời bạn nhập số trong khoảng từ: "));
+    let numberEnd = parseInt(prompt("đến: "));
+    for (let i = 0; i < arr.length; i++) {
+        arr[i] = Math.floor(Math.random() * numberEnd) + numberStart;
+    }
+    let max = arr[0];
+    document.write("Mảng vừa sinh ra: ");
+    for (let i = 0; i < arr.length; i++) {
+        document.write(arr[i] + " ");
+    }
+    for (let i = 0; i < arr.length; i++) {
+        document.write(arr[i] + " ");
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    document.write("<br>" + "Số lớn nhất của mảng: " + max);
+
+</script>
+</body>
+</html>
