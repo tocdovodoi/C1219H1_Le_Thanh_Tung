@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<script>
+    //Bài 2: Viết một chương trình nhận một số nhập vào và chèn dấu (-) giữa 2  số chẵn.
+    // Ví dụ nếu bạn nhập vào 24578 thì kết quả của chương trình sẽ là 2-4578.
+    let number = "24568";
+    //let number = prompt("Nhập vào 1 số nguyên bất kỳ");
+    let arr = [];
+    let count = 0;
+    let n = number.length;
+    while (count < n) {
+        arr[count] = parseInt(number % 10);
+        number = parseInt(number / 10);
+        count++;
+    }
+    //Mảng được sinh ra từ số nhập vào
+    document.write("Mảng được sinh ra từ số nhập vào: ");
+    for (let i = arr.length - 1; i >= 0; i--) {
+        document.write(arr[i] + " ");
+    }
+    //2457
+    // 4578
+    //2-4578
+    //In ra dấu - nếu có 2 số chẵn cạnh nhau
+    document.write("<br>" + "Kết quả của chương trình: ");
+    for (let i = arr.length - 1; i >= 0; i--) {
+        if (arr[i] % 2 == 0 && arr[i+1] % 2 == 0) {
+            document.write("-");
+        }
+        document.write(arr[i]);
+    }
+
+</script>
+</body>
+</html>

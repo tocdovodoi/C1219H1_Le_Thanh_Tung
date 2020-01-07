@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Tìm giá trị lớn nhất và nhỏ nhất trong mảng</title>
+</head>
+<body>
+<script>
+    let arr = [-3, 5, 1, 3, 2, 10];
+    document.write("Mảng ban đầu của bạn : ");
+    for (let i = 0; i < arr.length; i++) {
+        document.write(arr[i] + " ");
+    }
+    let max;
+    for (let i = 0; i < arr.length; i++) {
+        max = arr[0];
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+    let min;
+    for (let i = 0; i < arr.length; i++) {
+        min = arr[0];
+        if (arr[i] < min) {
+            min = arr[i];
+        }
+    }
+    document.write("<br>" + "Số lớn nhất mảng là số: " + max);
+    document.write("<br>" + "Số lớn nhất mảng là số: " + min);
+</script>
+</body>
+</html>
