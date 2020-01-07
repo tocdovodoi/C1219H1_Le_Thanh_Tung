@@ -15,7 +15,9 @@
     let n = number.length;
     while (count < n) {
         arr[count] = parseInt(number % 10);
+        //24%10= 4
         number = parseInt(number / 10);
+        //24/10 = 2
         count++;
     }
     //Mảng được sinh ra từ số nhập vào
