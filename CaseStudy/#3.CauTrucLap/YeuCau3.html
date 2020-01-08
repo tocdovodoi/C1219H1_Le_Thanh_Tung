@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý khu nghỉ dưỡng Furama</title>
+<!--</head>-->
+<body>
+<script>
+    let emailCustomer;
+    let checkEmail = true;
+    let idCard;
+    let checkId = true;
+    let nameCustomer = prompt("Enter Name Customer: ");
+    idCard = prompt("Enter ID Card: ");
+        do {
+        checkId=true;
+        idCard = prompt("Please input Email again! ");
+        for (let i = 0; i < idCard.length; i++) {
+            if (!(idCard.charAt(i) >= 0 && (idCard.charAt(i) / idCard.charAt(i) == 1) && (idCard.charAt(0) != 0))) {
+                checkId = false;
+            }
+        }
+    } while (!checkId);
+
+    let birthdayCustomer = prompt("Enter Birthday Customer (dd/MM/yyy): ");
+    emailCustomer = prompt("Enter Email Customer: ");
+    do {
+        emailCustomer = prompt("Please input Email again! ");
+        let countDoc = 0; // dấu .
+        let countAt = 0; // dấu @
+        for (let i = 0; i < emailCustomer.length; i++) {
+            if (emailCustomer.charAt(i) === ".") {
+                countDoc++;
+            }
+            if (emailCustomer.charAt(i) === "@") {
+                countAt++;
+            }
+        }
+        if (countDoc >= 1 && countAt == 1) {
+            checkEmail = false;
+        }
+    } while (!checkEmail);
+    let addressCustomer = prompt("Enter Address Customer: ");
+    let typeCustomer = prompt("Enter Type Customer: ");
+    let discount = prompt("Enter Discount: ");
+    let numberOfAccompaying = prompt("Enter Number Of Accompaying: ");
+    let typeRoom = prompt("Enter Type Room: ");
+    let rentDays = prompt("Enter Rent Days: ");
+    let typeService = prompt("Enter Type Service: ");
+    let totalPays = 500* Number.parseInt(rentDays)*(1-Number.parseFloat(discount)/100);
+    //Hiển thị thông tin
+    alert("Information Of Customer: \n" +
+        "Name: " + nameCustomer +
+        "\nID Card: " + idCard +
+        "\nBirthday: " + birthdayCustomer +
+        "\nEmail: " + emailCustomer +
+        "\nAddress: " + addressCustomer +
+        "\nType Customer: " + typeCustomer +
+        "\nDiscount: " + discount +
+        "\nNumber Of Accompaying: " + numberOfAccompaying +
+        "\nType Room: " + typeRoom +
+        "\nRent Days: " + rentDays +
+        "\nType Service: " + typeService +
+        "\nTotal Pays: " + totalPays
+    );
+</script>
+</body>
+</html>
