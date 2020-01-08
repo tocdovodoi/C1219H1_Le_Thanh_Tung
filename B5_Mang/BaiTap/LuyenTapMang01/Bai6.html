@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 6</title>
+</head>
+<body>
+<script>
+    //Bài 6- Viết chương trình khởi tạo/nhập vào một mảng số nguyên gồm 10 phần tử,
+    // nhập/tạo phần tử số nguyên V.
+    // Chương trình tìm xem V có nằm trong mảng số nguyên không?
+    // Nếu V thuộc mảng số nguyên thì in ra "V is in the array"
+    // còn lại in ra "V is not in the array".
+    let arrInt = [100];
+    for (let i = 0; i < 100; i++) {
+        arrInt[i] = Math.floor(Math.random() * 99) + 0;
+    }
+    document.write("Mảng random: " + arrInt);
+    let v = prompt("Nhập 1 số bất kỳ");
+    let check = false;
+    if (arrInt.indexOf(parseInt(v)) !== (-1)) {
+        document.write("<br>" + "V is in the array");
+    } else {
+        document.write("<br>" + "V is not in the array");
+    }
+</script>
+</body>
+</html>

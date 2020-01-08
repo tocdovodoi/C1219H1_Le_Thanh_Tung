@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Từ điển đơn giản</title>
+</head>
+<body>
+<script>
+    //Tạo 2 mảng có độ dài bằng nhau
+    // Mảng 1 lưu trữ từ tiếng anh
+    // Mảng 2 lưu trũ từ tiếng việt
+    // Nếu tìm thấy từ tiếng anh trong mảng 1, in ra từ tiếng việt tương ứng trong mảng 2
+    let arr1 = ["love", "hate", "codegym", "information", "cat", "bird"];
+    let arr2 = ["yêu", "ghét", "anh Đức", "thông tin", "con mèo", "con chym"];
+    alert("Từ điển chỉ có thể tra cứu dc các từ sau: " + arr1);
+    let search = prompt("Nhập từ cần tra cứu!");
+    let check = arr1.indexOf(search);
+    if (check !== (-1)) {
+        document.write("Bạn vừa nhập từ: " + arr1[check] + "<br>");
+        document.write(" Từ này có nghĩa tiếng việt là: " + arr2[check]);
+    } else {
+        document.write("Không tìm thấy");
+    }
+
+    //Tốn bộ nhớ, lâu nếu mảng nhiều phần tử
+    // for (let i = 0; i < arr1.length; i++) {
+    //     if (search == arr1[i]) {
+    //         document.write("Bạn vừa nhập từ: " + arr1[i] + "<br>");
+    //         document.write(" Từ này có nghĩa tiếng việt là: " + arr2[i]);
+    //     }
+    // }
+
+</script>
+</body>
+</html>
