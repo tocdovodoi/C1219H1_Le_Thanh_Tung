@@ -6,26 +6,34 @@
     <!--</head>-->
 <body>
 <script>
-    let idCard;
-    let checkId = true;
-    let nameCustomer = prompt("Enter Name Customer: ");
-    do {
-        idCard = prompt("Enter ID Card: ");
-        for (let i = 0; i < idCard.length; i++) {
-            if ((idCard.charAt(0) != 0) && ((idCard.charAt(i) >= 0) && (!isNaN(idCard.charAt(i))))) {
-                checkId = false;
-            }
-        }
-    } while (checkId);
-    let birthdayCustomer;
+    // // let idCard;
+    // // let checkId = true;
+    // // let nameCustomer = prompt("Enter Name Customer: ");
+    // // do {
+    // //     idCard = prompt("Enter ID Card: ");
+    // //     for (let i = 0; i < idCard.length; i++) {
+    // //         if ((idCard.charAt(0) != 0) && ((idCard.charAt(i) >= 0) && (!isNaN(idCard.charAt(i))))) {
+    // //             checkId = false;
+    // //         }
+    // //     }
+    // // } while (checkId);
+    // let birthdayCustomer;
     let checkBirthday = true;
     do {
-        birthdayCustomer = prompt("Enter Birthday Customer (dd/MM/yyy): ");
+        birthdayCustomer = prompt("Enter Birthday Customer (dd/MM/yyyy): ");
         for (let i = 0; i < birthdayCustomer.length; i++) {
-            if ((birthdayCustomer.charAt(2) == "/" && birthdayCustomer.charAt(5) == "/")) {
-                if (!isNaN(birthdayCustomer)) {
-                    checkBirthday = false;
-                }
+            if (birthdayCustomer.charAt(2) == "/"
+                && birthdayCustomer.charAt(5) == "/"
+                && parseInt(birthdayCustomer.charAt(0)) >= 0
+                && parseInt(birthdayCustomer.charAt(1)) >= 0
+                && parseInt(birthdayCustomer.charAt(3)) >= 0
+                && parseInt(birthdayCustomer.charAt(4)) >= 0
+                && parseInt(birthdayCustomer.charAt(6)) >= 0
+                && parseInt(birthdayCustomer.charAt(7)) >= 0
+                && parseInt(birthdayCustomer.charAt(8)) >= 0
+                && parseInt(birthdayCustomer.charAt(9)) >= 0
+            ) {
+                checkBirthday = false;
             }
         }
     } while (checkBirthday);
@@ -63,12 +71,12 @@
                 checkDiscount = true;
             }
         }
-    } while(!checkDiscount);
+    } while (!checkDiscount);
     let numberOfAccompaying = prompt("Enter Number Of Accompaying: ");
     let typeRoom = prompt("Enter Type Room: ");
     let rentDays = prompt("Enter Rent Days: ");
     let typeService = prompt("Enter Type Service: ");
-    let totalPays = 500* Number.parseInt(rentDays)*(1-Number.parseFloat(discount)/100);
+    let totalPays = 500 * Number.parseInt(rentDays) * (1 - Number.parseFloat(discount) / 100);
     //Hiển thị thông tin
     alert("Information Of Customer: \n" +
         "Name: " + nameCustomer +
