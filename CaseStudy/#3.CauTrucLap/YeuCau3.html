@@ -3,29 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <title>Quản lý khu nghỉ dưỡng Furama</title>
-<!--</head>-->
+    <!--</head>-->
 <body>
 <script>
-    let emailCustomer;
-    let checkEmail = true;
     let idCard;
     let checkId = true;
-    let nameCustomer = prompt("Enter Name Customer: ");
-    idCard = prompt("Enter ID Card: ");
-        do {
-        checkId=true;
-        idCard = prompt("Please input Email again! ");
+    // let nameCustomer = prompt("Enter Name Customer: ");
+    do {
+        idCard = prompt("Enter ID Card: ");
         for (let i = 0; i < idCard.length; i++) {
-            if (!(idCard.charAt(i) >= 0 && (idCard.charAt(i) / idCard.charAt(i) == 1) && (idCard.charAt(0) != 0))) {
+            if ((idCard.charAt(0) != 0) && ((idCard.charAt(i) >= 0) && (idCard.charAt(i) / idCard.charAt(i) == 1))) {
                 checkId = false;
             }
         }
-    } while (!checkId);
-
-    let birthdayCustomer = prompt("Enter Birthday Customer (dd/MM/yyy): ");
-    emailCustomer = prompt("Enter Email Customer: ");
+    } while (checkId);
+    let birthdayCustomer;
+    let checkBirthday = true;
     do {
-        emailCustomer = prompt("Please input Email again! ");
+        birthdayCustomer = prompt("Enter Birthday Customer (dd/MM/yyy): ");
+        for (let i = 0; i < birthdayCustomer.length; i++) {
+            if ((birthdayCustomer.charAt(2) == "/" && birthdayCustomer.charAt(5) == "/")) {
+                if (birthdayCustomer.charAt(i) >= 0) {
+                    checkBirthday = false;
+                }
+            }
+        }
+    } while (checkBirthday);
+    let emailCustomer;
+    let checkEmail = true;
+    do {
+        emailCustomer = prompt("Enter Email Customer: ");
         let countDoc = 0; // dấu .
         let countAt = 0; // dấu @
         for (let i = 0; i < emailCustomer.length; i++) {
@@ -38,8 +45,11 @@
         }
         if (countDoc >= 1 && countAt == 1) {
             checkEmail = false;
+
+        } else {
+            alert("Please input email try again!");
         }
-    } while (!checkEmail);
+    } while (checkEmail);
     let addressCustomer = prompt("Enter Address Customer: ");
     let typeCustomer = prompt("Enter Type Customer: ");
     let discount = prompt("Enter Discount: ");
