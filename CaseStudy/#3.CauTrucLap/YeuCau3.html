@@ -12,7 +12,7 @@
     do {
         idCard = prompt("Enter ID Card: ");
         for (let i = 0; i < idCard.length; i++) {
-            if ((idCard.charAt(0) != 0) && ((idCard.charAt(i) >= 0) && (idCard.charAt(i) / idCard.charAt(i) == 1))) {
+            if ((idCard.charAt(0) != 0) && ((idCard.charAt(i) >= 0) && (!isNaN(idCard.charAt(i))))) {
                 checkId = false;
             }
         }
@@ -23,7 +23,7 @@
         birthdayCustomer = prompt("Enter Birthday Customer (dd/MM/yyy): ");
         for (let i = 0; i < birthdayCustomer.length; i++) {
             if ((birthdayCustomer.charAt(2) == "/" && birthdayCustomer.charAt(5) == "/")) {
-                if (birthdayCustomer.charAt(i) >= 0) {
+                if (!isNaN(birthdayCustomer)) {
                     checkBirthday = false;
                 }
             }
@@ -52,7 +52,18 @@
     } while (checkEmail);
     let addressCustomer = prompt("Enter Address Customer: ");
     let typeCustomer = prompt("Enter Type Customer: ");
-    let discount = prompt("Enter Discount: ");
+    let discount;
+    let checkDiscount = false;
+    do {
+        checkDiscount = false;
+        discount = prompt("Enter Discount: ");
+        if (!isNaN(discount)) {
+            discount = Number.parseFloat(discount);
+            if (discount >= 0) {
+                checkDiscount = true;
+            }
+        }
+    } while(!checkDiscount);
     let numberOfAccompaying = prompt("Enter Number Of Accompaying: ");
     let typeRoom = prompt("Enter Type Room: ");
     let rentDays = prompt("Enter Rent Days: ");
