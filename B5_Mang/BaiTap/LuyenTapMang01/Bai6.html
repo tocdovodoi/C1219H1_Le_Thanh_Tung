@@ -11,13 +11,13 @@
     // Chương trình tìm xem V có nằm trong mảng số nguyên không?
     // Nếu V thuộc mảng số nguyên thì in ra "V is in the array"
     // còn lại in ra "V is not in the array".
-    let arrInt = [100];
-    for (let i = 0; i < 100; i++) {
+
+    let v = prompt("Nhập 1 số bất kỳ");
+    let arrInt = [20];
+    for (let i = 0; i < 20; i++) {
         arrInt[i] = Math.floor(Math.random() * 99) + 0;
     }
     document.write("Mảng random: " + arrInt);
-    let v = prompt("Nhập 1 số bất kỳ");
-    let check = false;
     if (arrInt.indexOf(parseInt(v)) !== (-1)) {
         document.write("<br>" + "V is in the array");
     } else {
