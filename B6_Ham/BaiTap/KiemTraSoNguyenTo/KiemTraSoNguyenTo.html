@@ -6,16 +6,30 @@
 </head>
 <body>
 <script>
-    let number = parseInt(prompt("Nhập 1 số nguyên bất kỳ"));
-    if (number < 2) {
-        document.write("Số " + number + " không phải số nguyên tố");
-    } else {
-        if (checkSNT(number) === true) {
-            document.write("Số " + number + " là số nguyên tố");
-        } else {
-            document.write("Số " + number + " không phải số nguyên tố");
+    let number = parseInt(prompt("Bạn muốn hiển thị số nguyên tố trong khoảng từ 0 - ?"));
+    let count = 0;
+    //Kiểm tra số nguyên tố trong khoảng 0 - ?
+    while (count <= number) {
+        for (let i = 2; i < number; i++) {
+            if (checkSNT(i) == true) {
+                document.write(i+ " ");
+            }
         }
+        count++;
+        break;
     }
+    //Kiểm tra 1 số bất kỳ
+    // let number = parseInt(prompt("Nhập 1 số nguyên bất kỳ"));
+    // if (number < 2) {
+    //     document.write("Số " + number + " không phải số nguyên tố");
+    // } else {
+    //     if (checkSNT(number) === true) {
+    //         document.write("Số " + number + " là số nguyên tố");
+    //     } else {
+    //         document.write("Số " + number + " không phải số nguyên tố");
+    //     }
+    // }
+
 
     //Hàm kiểm tra số nguyên tố
     function checkSNT(number) {

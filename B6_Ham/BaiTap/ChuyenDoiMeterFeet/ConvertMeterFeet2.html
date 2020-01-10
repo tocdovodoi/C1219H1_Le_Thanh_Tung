@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi giữa feet và meter </title>
+</head>
+<body>
+<form>
+    <p style="color: blueviolet">Feet</p>
+    <input type="number" id="feet">
+    <br>
+    <br>
+    <button type="button" onclick="convert(); return false;">Convert</button>
+    <p style="color: blueviolet">Met</p>
+    <input type="number" id="met">
+
+</form>
+<script>
+    //Hàm chuyển đổi
+    function convert() {
+        if (document.getElementById("feet").value != 0 && document.getElementById("met").value == 0) {
+            document.getElementById("met").value = document.getElementById("feet").value * 3.279;
+        }
+        if (document.getElementById("met").value != 0 && document.getElementById("feet").value == 0) {
+            document.getElementById("feet").value = document.getElementById("met").value * 0.305;
+        }
+    }
+
+</script>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Chuyển đổi giữa feet và meter </title>
+</head>
+<body>
+<script>
+    let number = parseFloat(prompt("Nhập một số bất kỳ"));
+    document.write(number + "m = " + meterToFeet(number)+ "f" + "<br>");
+    document.write(number + "f = " + feetToMeter(number)+ "m");
+    //Hàm chuyển từ Meter sang Feet
+    function meterToFeet(m) {
+        return 0.305*m;
+    }
+
+    //Hàm chuyển từ Feet sang Meter
+    function feetToMeter(f) {
+        return 3.279*f;
+    }
+
+</script>
+</body>
+</html>
