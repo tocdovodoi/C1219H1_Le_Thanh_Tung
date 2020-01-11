@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quản lý khu nghỉ dưỡng Furama</title>
+</head>
+<body>
+<script>
+    let arrNameCustomer = [];
+    let choose = prompt("1. Add new Customer" +
+        "\n2. Delete Customer");
+
+    switch (choose) {
+        case "1":
+            let arrLength = parseInt(prompt("Enter the number of Customers you want to add"));
+            for (let i = 0; i < arrLength; i++) {
+                arrNameCustomer.push(prompt("Enter name Customer no " + (i + 1)));
+            }
+            let result = "";
+            arrNameCustomer.sort();
+            for (let i = 0; i < arrNameCustomer.length; i++) {
+                result += "\n" + (i + 1) + ". " + arrNameCustomer[i];
+            }
+            alert(result);
+            break;
+        case "2":
+            break;
+        default:
+            alert("Fail!!");
+            break;
+
+    }
+</script>
+</body>
+</html>
