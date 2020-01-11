@@ -6,24 +6,39 @@
     <!--</head>-->
 <body>
 <script>
-    // // let idCard;
-    // // let checkId = true;
-    // // let nameCustomer = prompt("Enter Name Customer: ");
-    // // do {
-    // //     idCard = prompt("Enter ID Card: ");
-    // //     for (let i = 0; i < idCard.length; i++) {
-    // //         if ((idCard.charAt(0) != 0) && ((idCard.charAt(i) >= 0) && (!isNaN(idCard.charAt(i))))) {
-    // //             checkId = false;
-    // //         }
-    // //     }
-    // // } while (checkId);
-    // let birthdayCustomer;
+    let idCard;
+    let checkId = true;
+    //Định dạng lại tên
+    let nameCustomer = prompt("Enter Name Customer: ");
+    let nameStandardized = "";
+    nameCustomer = nameCustomer.trim().toLocaleLowerCase();
+    for (let i = 0; i < nameCustomer.length; i++) {
+        if (nameCustomer.charAt(i) === " " && nameCustomer.charAt(i + 1) === " ") {
+            continue;
+        }
+        if (i == 0 || nameCustomer.charAt(i - 1) == " ") {
+            nameStandardized += nameCustomer.charAt(i).toLocaleUpperCase();
+            continue;
+        }
+        nameStandardized += nameCustomer.charAt(i);
+    }
+    nameCustomer = nameStandardized;
+
+    do {
+        idCard = prompt("Enter ID Card: ");
+        for (let i = 0; i < idCard.length; i++) {
+            if ((idCard.charAt(0) != 0) && ((idCard.charAt(i) >= 0) && (!isNaN(idCard.charAt(i))))) {
+                checkId = false;
+            }
+        }
+    } while (checkId);
+    let birthdayCustomer;
     let checkBirthday = true;
     do {
         birthdayCustomer = prompt("Enter Birthday Customer (dd/MM/yyyy): ");
-        for (let i = 0; i < birthdayCustomer.length; i++) {
-            if (birthdayCustomer.charAt(2) == "/"
-                && birthdayCustomer.charAt(5) == "/"
+        for (let i = 0; i < 10; i++) {
+            if (birthdayCustomer.charAt(2) === "/"
+                && birthdayCustomer.charAt(5) === "/"
                 && parseInt(birthdayCustomer.charAt(0)) >= 0
                 && parseInt(birthdayCustomer.charAt(1)) >= 0
                 && parseInt(birthdayCustomer.charAt(3)) >= 0
@@ -32,6 +47,7 @@
                 && parseInt(birthdayCustomer.charAt(7)) >= 0
                 && parseInt(birthdayCustomer.charAt(8)) >= 0
                 && parseInt(birthdayCustomer.charAt(9)) >= 0
+                && birthdayCustomer.length === 10
             ) {
                 checkBirthday = false;
             }
@@ -58,7 +74,23 @@
             alert("Please input email try again!");
         }
     } while (checkEmail);
+
+    //Định dạng lại địa chỉ
     let addressCustomer = prompt("Enter Address Customer: ");
+    let addressStandardized = "";
+    addressCustomer = addressCustomer.trim().toLocaleLowerCase();
+    for (let i = 0; i < addressCustomer.length; i++) {
+        if (addressCustomer.charAt(i) === " " && addressCustomer.charAt(i + 1) === " ") {
+            continue;
+        }
+        if (i === 0 || addressCustomer.charAt(i - 1) === " ") {
+            addressStandardized += addressCustomer.charAt(i).toLocaleUpperCase();
+            continue;
+        }
+        addressStandardized += addressCustomer.charAt(i);
+    }
+    addressCustomer = addressStandardized;
+
     let typeCustomer = prompt("Enter Type Customer: ");
     let discount;
     let checkDiscount = false;

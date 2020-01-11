@@ -20,9 +20,10 @@
     function convert() {
         if (document.getElementById("feet").value != 0 && document.getElementById("met").value == 0) {
             document.getElementById("met").value = document.getElementById("feet").value * 3.279;
-        }
-        if (document.getElementById("met").value != 0 && document.getElementById("feet").value == 0) {
+        } else if (document.getElementById("met").value != 0 && document.getElementById("feet").value == 0) {
             document.getElementById("feet").value = document.getElementById("met").value * 0.305;
+        } else {
+            alert("Vui lòng chỉ nhập 1 kiểu feet hoặc met");
         }
     }
 
