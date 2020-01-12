@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 9</title>
+</head>
+<body>
+<script>
+    //Bài 9: Viết hàm truyền vào một mảng ký tự, và một ký tự bất kỳ,
+    // kiểm tra xem ký tự bất kỳ đó có nằm trong mảng không.
+    // Nếu có trả về số lần xuất hiện của ký tự đó, nếu không trả về -1.
+    let arr = ["2", "3", "4", "3", "7", "3", "4", "a", "b", "c", "d", "e", "3"];
+    let char = prompt("Nhập một ký tự bất kỳ");
+    checChar(char);
+    function checChar(n) {
+        let count = 0;
+        for (let i = 0; i < arr.length; i++) {
+            if (arr[i]===n) {
+                count ++;
+            }
+        }
+        document.write("Ký tự " + n + " xuất hiện " + count + " lần trong mảng");
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 7</title>
+</head>
+<body>
+<script>
+    //Bài 7: Viết hàm truyền vào 2 số nguyên bất kì, thực hiện đổi chỗ hai số nguyên đó.
+    let number1 = prompt("Nhập số thứ nhất");
+    let number2 = prompt("Nhập số thứ hai");
+    trade(number1, number2);
+    function trade(a, b) {
+        let tam;
+        tam = a;
+        a = b;
+        b = tam;
+        alert("Hoán đổi thành: " + a + "," + b);
+    }
+</script>
+</body>
+</html>

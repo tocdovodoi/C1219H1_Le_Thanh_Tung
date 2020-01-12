@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 2</title>
+</head>
+<body>
+<script>
+    //Bài 2: Viết hàm tính diện tích, hàm tính chu vi hình tròn. Gọi hàm vừa xây dựng được
+    const pi = 3.141592654;
+    let banKinh = parseFloat(prompt("Nhập bán kính của hình tròn"));
+    chuVi(banKinh);
+    dienTich(banKinh);
+    function chuVi(n) {
+        document.write("Chu vi của hình tròn = " + 2*n*pi+ "<br>");
+    }
+    function dienTich(n) {
+        document.write("Diện tích của hình tròn = " + n*n*pi+ "<br>");
+    }
+</script>
+</body>
+</html>

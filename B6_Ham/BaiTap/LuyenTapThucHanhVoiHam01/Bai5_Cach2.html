@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bài 5</title>
+</head>
+<body>
+<script>
+    ////Bài 5: Tạo một mảng với bảy phần tử dạng chuỗi có giá trị là tên các ngôi sao...
+    let star = ["Polaris", "Aldebaran", "Deneb", "Vega", "Altair", "Dubhe", "Regulus"];
+    let Constellation = ["Ursa Minor", "Tarurus", "Cygnus", "Lyra", "Aquila", "Ursa Major", "Leo"];
+    let search = prompt("Nhập tên ngôi sao cần tìm kiếm " + star);
+    searchStar(search);
+    function searchStar(search) {
+        let check = star.indexOf(search);
+        if (check !== (-1)) {
+            alert("Ngôi sao " + search + " thuộc chòm sao " + Constellation[check]);
+        } else {
+            alert("Ngôi sao bạn tìm kiếm không có!");
+        }
+    }
+</script>
+</body>
+</html>
