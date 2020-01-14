@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp Date</title>
+</head>
+<body>
+<script>
+    //Xây dựng lớp Date, dùng hàm để giả lập class
+    let MyDate = function (day, month, year) {
+        this.day = day;
+        this.month = month;
+        this.year = year;
+    };
+
+    //Sử dụng lớp vừa tạo ra
+    let date = new MyDate(2, 2, 2007);
+    //Hiển thị ngày tháng năm
+    alert(date.day + "/" + date.month + "/" + date.year);
+
+</script>
+</body>
+</html>
