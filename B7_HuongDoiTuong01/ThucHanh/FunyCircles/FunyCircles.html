@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hình tròn động</title>
+</head>
+<body>
+<canvas id="canvasexample" width="300" height="300"
+        style="background: whitesmoke;">
+</canvas>
+<script>
+    let c = document.getElementById("canvasexample");
+    //Lấy context
+    let ctx = c.getContext("2d");
+    //Vẽ cung tròn
+    // x, y : tọa độ tâm
+    // r bán kính
+    // start góc bắt đầu vẽ     bắt đầu bằng 0
+    // stop góc kết thúc vẽ     2PI vẽ 1 vòng tròn, 1PI nửa vòng
+
+    ctx.beginPath();
+    ctx.arc(100, 100, 50, 0, 2 * Math.PI);
+    ctx.stroke();
+
+
+</script>
+</body>
+</html>

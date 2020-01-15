@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Xây dựng lớp Apple</title>
+</head>
+<body>
+<script>
+    //set gán giá trị, phải có tham số truyền vào
+    //get lấy giá trị, phải có return
+    let Apple = function () {
+        this.setType = function (type) {
+            this.type = type;
+        };
+        this.setColor = function (color) {
+            this.color = color;
+        };
+        this.setPrice = function (price) {
+            this.price = price;
+        };
+        this.setWeight = function (weight) {
+            this.weight = weight;
+        };
+        this.getType = function () {
+            return this.type;
+        };
+        this.getColor = function () {
+            return this.color;
+        };
+        this.getPrice = function () {
+            return this.price;
+        };
+        this.getWeight = function () {
+            return this.weight;
+        };
+        this.getInfoApple = function () {
+            return "type = " + this.getType() +
+                    "\ncolor = " + this.getColor() +
+                    "\nprice = " + this.getPrice() +
+                    "\nweight = " + this.getWeight();
+        }
+    }
+
+    let ap1 = new Apple();
+    ap1.setType("Model");
+    ap1.setColor("Black");
+    ap1.setPrice(25000000);
+    ap1.setWeight(1.75);
+    alert(ap1.getInfoApple());
+
+</script>
+</body>
+</html>

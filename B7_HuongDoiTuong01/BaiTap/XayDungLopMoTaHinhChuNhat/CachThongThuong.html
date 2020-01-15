@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hình chữ nhật</title>
+</head>
+<body>
+<script>
+    let HinhChuNhat = function () {
+        this.setChieuDai = function (chieuDai) {
+            this.chieuDai = chieuDai;
+        };
+        this.setChieuRong = function (chieuRong) {
+            this.chieuRong = chieuRong;
+        };
+        this.getChieuDai = function () {
+            return this.chieuDai;
+        };
+        this.getChieuRong = function () {
+            return this.chieuRong;
+        };
+        this.getChuVi = function () {
+            return 2 * (this.chieuDai + this.chieuRong);
+        };
+        this.getDienTich = function () {
+            return this.chieuDai*this.chieuRong;
+        }
+    };
+    let hinhChuNhat1 = new HinhChuNhat();
+    hinhChuNhat1.chieuDai = 5;
+    hinhChuNhat1.chieuRong = 10;
+    alert("Chu vi = " + hinhChuNhat1.getChuVi()+
+    "\nDiện tích = " + hinhChuNhat1.getDienTich());
+
+</script>
+</body>
+</html>
