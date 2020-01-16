@@ -1,16 +1,14 @@
 //Tạo 2 mảng chứa name và id Customer
-let arrNameCustomer = [];
-let arrIdCardCustomer = [];
+let arrNameCustomer = ["Le Thanh Tung", "A.Duc Handsome", "A.Trung Kute"];
+let arrIdCardCustomer = ["172948183", "12345678", "87654321"];
 
 
 //Chạy menu chính
 displayMainMenu();
-//check là biến toàn cục của Main menu
-var check = true;
 
 //Menu chính
 function displayMainMenu() {
-    var check = true;
+    let check = true;
     do {
         let chooseMenu = prompt("Please select the function" +
             "\n1. Add New Customer" +
@@ -50,13 +48,10 @@ function addNewCustomer() {
 
 //Hàm display Customer
 function displayCustomer() {
-    let result = "";
-    for (let i = 0; i < arrNameCustomer.length; i++) {
-        result += "\n" + (i + 1) + ". Name: " + arrNameCustomer[i] + " - Id Card: " + arrIdCardCustomer[i];
-    }
+    infoCustomer();
     let checkChooseDisplay = true;
     do {
-        let chooseDisplay = prompt("\n0. Back" + result);
+        let chooseDisplay = prompt("\n0. Back" + infoCustomer());
         switch (chooseDisplay) {
             case "0":
                 checkChooseDisplay = false;
@@ -68,12 +63,42 @@ function displayCustomer() {
     } while (checkChooseDisplay);
 }
 
+//Hiển thị thông tin của một khách hàng bất kỳ - không cần thiết
+// function displayInfomationCustomer() {
+//
+// }
+
+//Hàm in ra danh sách customer
+function infoCustomer() {
+    let result = "";
+    for (let i = 0; i < arrNameCustomer.length; i++) {
+        result += "\n" + (i + 1) + ". Name: " + arrNameCustomer[i] + " - Id Card: " + arrIdCardCustomer[i];
+    }
+    return result;
+}
+
 //Hàm edit Customer
 function editCustomer() {
-
+    infoCustomer();
+    let chooseEdit = parseInt(prompt("Choose Customer you want edit?\n" + infoCustomer()));
+    let checkChooseEdit = false;
+    for (let i = 0; i < arrNameCustomer.length; i++) {
+        if (chooseEdit === (i + 1)) {
+            arrNameCustomer[i] = prompt("Enter new name Customer!");
+            arrIdCardCustomer[i] = prompt("Enter new Id Customer");
+            checkChooseEdit = true;
+            break;
+        }
+        checkChooseEdit = false;
+    }
 }
 
 //Hàm delete Customer
 function deleteCustomer() {
-
+    infoCustomer();
+    let indexDelete = prompt("Choose Customer you want to delete" + infoCustomer());
+    arrNameCustomer.splice(Number.parseInt(indexDelete) - 1, 1); //Xoá ký tự tại vị trí (bắt đầu và kết thúc)
+    arrIdCardCustomer.splice(Number.parseInt(indexDelete) - 1, 1);
+    infoCustomer();
+    alert("List Customer after delete\n" + infoCustomer());
 }
