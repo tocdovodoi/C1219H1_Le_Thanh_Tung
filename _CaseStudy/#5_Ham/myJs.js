@@ -51,13 +51,13 @@ function displayCustomer() {
     infoCustomer();
     let checkChooseDisplay = true;
     do {
-        let chooseDisplay = prompt("\n0. Back" + infoCustomer());
+        let chooseDisplay = parseInt(prompt(infoCustomer() + "\n" + (arrNameCustomer.length + 1) + ". Back"));
         switch (chooseDisplay) {
-            case "0":
+            case (arrNameCustomer.length + 1):
                 checkChooseDisplay = false;
                 break;
             default:
-                alert("Plese choose 0 to back");
+                alert("Plese choose " + (arrNameCustomer.length + 1) + " to back");
                 break;
         }
     } while (checkChooseDisplay);
