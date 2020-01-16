@@ -79,26 +79,20 @@ function infoCustomer() {
 
 //Hàm edit Customer
 function editCustomer() {
-    infoCustomer();
     let chooseEdit = parseInt(prompt("Choose Customer you want edit?\n" + infoCustomer()));
-    let checkChooseEdit = false;
     for (let i = 0; i < arrNameCustomer.length; i++) {
         if (chooseEdit === (i + 1)) {
             arrNameCustomer[i] = prompt("Enter new name Customer!");
             arrIdCardCustomer[i] = prompt("Enter new Id Customer");
-            checkChooseEdit = true;
             break;
         }
-        checkChooseEdit = false;
     }
 }
 
 //Hàm delete Customer
 function deleteCustomer() {
-    infoCustomer();
     let indexDelete = prompt("Choose Customer you want to delete" + infoCustomer());
     arrNameCustomer.splice(Number.parseInt(indexDelete) - 1, 1); //Xoá ký tự tại vị trí (bắt đầu và kết thúc)
     arrIdCardCustomer.splice(Number.parseInt(indexDelete) - 1, 1);
-    infoCustomer();
     alert("List Customer after delete\n" + infoCustomer());
 }
