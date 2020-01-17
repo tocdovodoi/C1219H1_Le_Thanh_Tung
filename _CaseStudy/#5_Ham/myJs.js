@@ -93,8 +93,13 @@ function deleteCustomer() {
         resultDelete += "\n" + (i + 1) + ". Name: " + arrNameCustomer[i] + " - Id Card: " + arrIdCardCustomer[i];
     }
     let indexDelete = prompt("Choose Customer you want to delete" + resultDelete);
-    arrNameCustomer.splice(Number.parseInt(indexDelete) - 1, 1); //Xoá ký tự tại vị trí (bắt đầu và kết thúc)
-    arrIdCardCustomer.splice(Number.parseInt(indexDelete) - 1, 1);
-    alert("List Customer after Delete");
-    displayCustomer();
+    let checkDelete = confirm("Are you sure?");
+    if (checkDelete === true) {
+        arrNameCustomer.splice(Number.parseInt(indexDelete) - 1, 1); //Xoá ký tự tại vị trí (bắt đầu và kết thúc)
+        arrIdCardCustomer.splice(Number.parseInt(indexDelete) - 1, 1);
+        alert("List Customer after Delete");
+        displayCustomer();
+    } else {
+        displayMainMenu();
+    }
 }
