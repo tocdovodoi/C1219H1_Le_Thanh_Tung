@@ -1,5 +1,6 @@
 let listCustomers = [];
 let validateBirthday = /^((0)[1-9]|[1-2][0-9]|(3)[0-1])(\/)((0)[1-9]|((1)[0-2]))(\/)\d{4}$/;
+let validateEmail = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
 
 function displayMainMenu() {
     let check = true;
@@ -41,6 +42,7 @@ function displayMainMenu() {
 
 function addNewCustomer() {
     let checkBirday = true;
+    let checkEmail = true;
     let cus = new Customer();
     cus.setNameCustomer(prompt("Enter name Customer"));
     cus.setIdCard(prompt("Enter id Card"));
@@ -52,7 +54,14 @@ function addNewCustomer() {
             alert("Birthday is invalid. Please try again!");
         }
     } while (checkBirday);
-    cus.setEmailCustomer(prompt("Enter Email Customer"));
+    do {
+        cus.setEmailCustomer(prompt("Enter Email Customer"));
+        if (validateEmail.test(cus.getEmailCustomer())) {
+            checkEmail = false;
+        } else {
+            alert("Email is invalid. Please try again!");
+        }
+    } while (checkEmail);
     cus.setAddressCustomer(prompt("Enter Address Customer"));
     cus.setTypeCustomer(prompt("Enter Type Customer"));
     cus.setDiscount(prompt("Enter Discount"));
@@ -62,4 +71,5 @@ function addNewCustomer() {
     cus.setTypeService(prompt("Enter Type Service"));
     listCustomers.push(cus);
 }
+
 displayMainMenu();
