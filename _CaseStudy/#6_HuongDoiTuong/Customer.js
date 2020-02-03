@@ -1,97 +1,102 @@
 let Customer = function () {
-
-    //Set
-    setNameCustomer(nameCustomer) {
+    //nameCustomer
+    this.setNameCustomer = function (nameCustomer) {
         this.nameCustomer = nameCustomer;
-    }
-
-    setIdCard(idCard) {
-        this.idCard = idCard;
-    }
-
-    setBirthdayCustomer(birthdayCustomer) {
-        this.birthdayCustomer = birthdayCustomer;
-    }
-
-    setEmailCustomer(emailCustomer) {
-        this.emailCustomer = emailCustomer;
-    }
-
-    setAddressCustomer(addressCustomer) {
-        this.addressCustomer = addressCustomer;
-    }
-
-    setTypeCustomer(typeCustomer) {
-        this.typeCustomer = typeCustomer;
-    }
-
-    setDiscount(discount) {
-        this.discount = discount;
-    }
-
-    setNumberOfAccompaying(numberOfAccompaying) {
-        this.numberOfAccompaying = numberOfAccompaying;
-    }
-
-    setTypeRoom(typeRoom) {
-        this.typeRoom = typeRoom;
-    }
-
-    setRentDays(rentDays) {
-        this.rentDays = rentDays;
-    }
-
-    setTypeService(typeService) {
-        this.typeService = typeService;
-    }
-
-    //Get
-    getNameCustomer() {
+    };
+    this.getNameCustomer = function () {
         return this.nameCustomer;
-    }
+    };
 
-    getIdCard() {
+    //idCard
+    this.setIdCard = function (idCard) {
+        this.idCard = idCard;
+    };
+    this.getIdCard = function () {
         return this.idCard;
-    }
+    };
 
-    getBirthdayCustomer() {
+    //birthdayCustomer
+    this.setBirthdayCustomer = function (birthdayCustomer) {
+        this.birthdayCustomer = birthdayCustomer;
+    };
+    this.getBirthdayCustomer = function () {
         return this.birthdayCustomer;
-    }
+    };
 
-    getEmailCustomer() {
+    //emailCustomer
+    this.setEmailCustomer = function (emailCustomer) {
+        this.emailCustomer = emailCustomer;
+    };
+    this.getEmailCustomer = function () {
         return this.emailCustomer;
-    }
+    };
 
-    getAddressCustomer() {
+    //addressCustomer
+    this.setAddressCustomer = function (addressCustomer) {
+        this.addressCustomer = addressCustomer;
+    };
+    this.getAddressCustomer = function () {
         return this.addressCustomer;
-    }
+    };
 
-    getTypeCustomer() {
+    //typeCustomer
+    this.setTypeCustomer = function (typeCustomer) {
+        this.typeCustomer = typeCustomer;
+    };
+    this.getTypeCustomer = function () {
         return this.typeCustomer;
-    }
+    };
 
-    getDiscount() {
+    //discount
+    this.setDiscount = function (discount) {
+        this.discount = discount;
+    };
+    this.getDiscount = function () {
         return this.discount;
-    }
+    };
 
-    getNumberOfAccompaying() {
+    //numberOfAccompaying
+    this.setNumberOfAccompaying = function (numberOfAccompaying) {
+        this.numberOfAccompaying = numberOfAccompaying;
+    };
+    this.getNumberOfAccompaying = function () {
         return this.numberOfAccompaying;
-    }
+    };
 
-    getTypeRoom() {
+    //typeRoom
+    this.setTypeRoom = function (typeRoom) {
+        this.typeRoom = typeRoom;
+    };
+    this.getTypeRoom = function () {
         return this.typeRoom;
-    }
+    };
 
-    getRentDays() {
+    //rentDays
+    this.setRentDays = function (rentDays) {
+        this.rentDays = rentDays;
+    };
+    this.getRentDays = function () {
         return this.rentDays;
-    }
+    };
 
-    getTypeService() {
+    //typeService
+    this.setTypeService = function (typeService) {
+        this.typeService = typeService;
+    };
+    this.getTypeService = function () {
         return this.typeService;
-    }
+    };
 
-    //Total
-    TotalPay(rentDays, discount) {
-        return 500 * Number.parseInt(rentDays) * (1 - Number.parseFloat(discount) / 100);
+    //method
+    this.totalPays = function () {
+        let moneyPerDays = 0;
+        if (typeService === "Villa") {
+            moneyPerDays = 500;
+        } else if (typeService === "House") {
+            moneyPerDays = 300;
+        } else {
+            moneyPerDays = 100;
+        }
+        return moneyPerDays = parseFloat(this.getRentDays()) * (1 - parseFloat(this.getDiscount()) / 100);
     }
-}
+};
