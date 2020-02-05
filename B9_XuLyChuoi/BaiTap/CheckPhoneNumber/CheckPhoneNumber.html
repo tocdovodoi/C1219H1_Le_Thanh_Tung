@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra tính hợp lệ của số điện thoại</title>
+</head>
+<body>
+<script>
+    // Viết phương thức để kiểm tra tính hợp lệ của số điên thoại.
+    // Số điện thoại hợp lệ cần đạt theo mẫu sau: (xx)-(0xxxxxxxxx)
+    // x là ký tự số
+    // Không chứa các ký tự đặc biệt
+    let patt = /^(\(\d{2}\)\-\(\d{10}\))$/;
+    let check = true;
+    do{
+        let number = prompt("Enter your number phone  (xx)-(0xxxxxxxxx)");
+        if (patt.test(number)) {
+            alert("Your Phone number: " + number);
+            check = false;
+        } else {
+            alert("Phone number is valid, please try again!");
+        }
+    } while (check);
+</script>
+</body>
+</html>

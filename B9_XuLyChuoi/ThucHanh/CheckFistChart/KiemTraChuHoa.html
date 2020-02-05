@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra ký tự đầu có phải chữ hoa hay không?</title>
+</head>
+<body>
+<script>
+    let str1 = "Adggfghgfhghg sfgfdgf fgdg  ";
+    let str2 = "agfhghgg dfdf dfd fdfdf 7878 ";
+    let validateUpCase = /^[A-Z]/;
+    let result = validateUpCase.test(str1);
+    let result2 = validateUpCase.test(str2);
+    alert(result);
+    alert(result2);
+</script>
+</body>
+</html>

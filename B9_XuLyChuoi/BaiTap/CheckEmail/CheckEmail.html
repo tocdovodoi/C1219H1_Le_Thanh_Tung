@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra tính hợp lệ của email</title>
+</head>
+<body>
+<script>
+    // Xây dựng mẫu email hợp lệ
+    // a@gmail.com
+    // ab@yahoo.com
+    // abc@hotmail.com
+    //-----------------------------------
+    // Xây dựng mẫu email Không hợp lệ
+    // @gmail.com
+    // ab@gmail.
+    // @#abc@gmail.com
+    let patt = /^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)$/;
+    let check = true;
+    do{
+        let email = prompt("Enter your email (tung@gmail.com)");
+        if (patt.test(email)) {
+            alert("Your email: " + email);
+            check = false;
+        } else {
+            alert("Email is valid, please try again!");
+        }
+    } while (check);
+</script>
+</body>
+</html>

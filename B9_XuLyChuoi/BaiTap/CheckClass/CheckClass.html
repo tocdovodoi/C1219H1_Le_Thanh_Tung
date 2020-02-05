@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra tính hợp lệ của Lớp học</title>
+</head>
+<body>
+<script>
+    //Tên một lớp học hợp lệ cần đạt các yêu cầu sau:
+    // Bắt đầu bằng một ký tự chữ hoa C hoặc A hoặc P
+    // Không chứa các ký tự đặc biệt
+    // Theo sau ký tự bắt đầu là 4 ký tự số
+    // Kết thúc phải là 1 trong những ký tự chữ hoa sau: G, H, I, K, L, M
+    // Ví dụ tên lớp hợp lệ: C0318G
+
+    // https://regex101.com/
+    let patt = /^[CAP]([0-9]{4})([GHIKLM])$/;
+    let check = true;
+    do{
+        let lop = prompt("Enter your Class (C0318G)");
+        if (patt.test(lop)) {
+            alert("Your email: " + lop);
+            check = false;
+        } else {
+            alert("Email is valid, please try again!");
+        }
+    } while (check);
+
+
+
+</script>
+</body>
+</html>

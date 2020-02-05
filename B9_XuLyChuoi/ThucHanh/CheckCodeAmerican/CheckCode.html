@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra Mã quốc gia của nước Mỹ</title>
+</head>
+<body>
+<script>
+    // let regexp = /^[0-9]{5}(?:-[0-9]{4})?$/; //Khó hiểu
+    let regexp = /^([0-9]{5}\-[0-9]{4})+$/;
+    let check = true;
+    do {
+        let code = prompt("Nhập mã quốc gia: (có dạng: 55555 - 4444 )");
+        if (regexp.test(code)) {
+            alert("Bạn mới nhập code: " + code);
+            check = false;
+        } else {
+            alert("Code invalid, please try again!");
+        }
+    } while (check);
+</script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra tính hợp lệ của tài khoản</title>
+</head>
+<body>
+<script>
+    //Không chứa các ký tự đặc biệt
+    // Ít nhất là 6 ký tự
+    // Không chứa các ký tự viết hoa
+    // Cho phép dấu gạch dưới (_)
+    //---------------------------
+    // Xây dựng mẫu account hợp lệ
+    // 123abc_
+    // _abc123
+    // ______
+    // 123456
+    // abcdefg
+    //Xây dựng mẫu account không hợp lệ
+    //.@
+    // 12345
+    // 1234_
+    // abcde
+
+    let patt = /^([_a-z0-9]{6,})$/;
+    let check = true;
+    do{
+        let account = prompt("Enter your account: ");
+        if (patt.test(account)) {
+            alert("Your account: " + account);
+            check = false;
+        } else {
+            alert("Account is valid, please try again!");
+        }
+    } while (check);
+
+</script>
+</body>
+</html>

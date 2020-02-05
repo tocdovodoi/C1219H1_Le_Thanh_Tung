@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Làm việc với date</title>
+</head>
+<body>
+<script>
+    //Bước 1: Tạo đối tượng Date() với thời gian truyền vào là ngày giờ sinh của bạn.
+    // Bước 2: Tạo đối tượng Date() với thời gian hiện tại.
+    //     Bước 3: Hiển thị thời gian mà bạn đã sống dưới nhiều đơn vị khác nhau:
+    //     Tôi đã sống 24 năm.
+    //     Tôi đã sống 288 tháng.
+    //     Tôi đã sống 8640 ngày.
+    //     Tôi đã sống 307360 giờ.
+    //     Tôi đã sống 12441600 phút.
+    //     Tôi đã sống 746496000 giây.
+
+    let today =      new Date(2020, 2, 5, 20, 0, 0);  //Ngày giờ hệ thống
+    let myBirthday = new Date(1989, 5, 13, 12, 0, 0); //Năm/Tháng/Ngày/Giờ/Phút/Giây
+    document.write("Bây giờ là: " + today.getHours() + " giờ " +
+        today.getMinutes() + " phút " +
+        " Ngày " + today.getDate() +
+        " Tháng " + (today.getMonth() + 1) +
+        " Năm " + today.getFullYear()
+        + "<br>");
+    let year = today.getFullYear() - myBirthday.getFullYear();                  //Tổng năm
+    let month = year*12 - (myBirthday.getMonth()-today.getMonth());             //Tổng tháng
+    let day = year * 365 - (myBirthday.getMonth()-today.getMonth() * 30);
+    let millisecond = today.getTime() - myBirthday.getTime(); // lấy độ lệch của 2 mốc thời gian, đơn vị tính là millisecond
+
+    document.write("Tôi sinh vào lúc " + myBirthday.getHours() + " giờ " + myBirthday.getMinutes() + " phút" + "<br>");
+    document.write("Tôi đã sống " + year + " năm" + "<br>");
+    document.write("Tôi đã sống " + month + " tháng" + "<br>");
+    document.write("Tôi đã sống " + day + " ngày" + "<br>");
+    document.write("Tôi đã sống " + millisecond/1000/60/60 + " giờ" + "<br>");
+    document.write("Tôi đã sống " + millisecond/1000/60 + " phút" + "<br>");
+    document.write("Tôi đã sống " + millisecond/1000 + " giây" + "<br>");
+    //document.write("Tôi đã sống " + millisecond + " millisecond" + "<br>");
+
+
+
+
+</script>
+</body>
+</html>
