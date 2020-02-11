@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vẽ hình chữ nhật</title>
+</head>
+<body>
+Chiều dài: <input id="chieuDai">
+<br>
+Chiều rộng: <input id="chieuRong">
+<br>
+<br>
+<button id="draw" onclick="veHinhChuNhat()">Vẽ hình</button>
+<br>
+<br>
+Chu vi: <input id="chuVi">
+<br>
+Diện tích: <input id="dienTich">
+<br>
+<p id="result"></p>
+<form>
+    <canvas id="myCanvas" height="5000" width="5000"></canvas>
+</form>
+<script>
+    function veHinhChuNhat(Dai, Rong) {
+        Dai = parseFloat(document.getElementById("chieuDai").value);
+        Rong = parseFloat(document.getElementById("chieuRong").value);
+        let canvas1 = document.getElementById("myCanvas");
+        let context = canvas1.getContext("2d");
+        context.fillStyle = "#4CAF50";
+        context.fillRect(0, 0, Dai, Rong);
+        document.getElementById("chuVi").value = (Dai+Rong)*2;
+        document.getElementById("dienTich").value = Dai*Rong;
+    }
+</script>
+</body>
+</html>

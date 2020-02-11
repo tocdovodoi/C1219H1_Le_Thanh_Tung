@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu 4</title>
+</head>
+<body>
+<script>
+    //Khai báo class student
+    function Student(stt, name, birthday, score) {
+        this.stt = stt;
+        this.name = name;
+        this.birthday = birthday;
+        this.score = score;
+        this.displayinfo = function () {
+            return "Stt: " + this.stt +
+                "\nName: " + this.name +
+                "\nBirthday: " + this.birthday +
+                "\nScore: " + this.score;
+        }
+    }
+
+    //Khai báo đối tượng học sinh thứ nhất
+    let student1 = new Student(1, "Lê Thanh Tùng", "13/05/1989", 7);
+
+    //Hàm hiểm thị thông tin
+    function display(student) {
+        alert(student.displayinfo());
+    }
+
+    //Hàm kiểm tra học lực
+    function checkHocLuc(number) {
+        if (number > 8) {
+            alert("Học lực: GIỎI");
+        } else if (number >= 6.5) {
+            alert("Học lực: KHÁ");
+        } else if (number >= 5) {
+            alert("Học lực: TRUNG BÌNH");
+        } else if (number >= 3.5) {
+            alert("Học lực: YẾU");
+        } else {
+            alert("Học lực: KÉM");
+        }
+    }
+
+    //Hiển thị thông tin sinh viên 1
+    display(student1);
+    //Kiểm tra học lực của sinh viên 1
+    checkHocLuc(student1.score);
+
+</script>
+</body>
+</html>

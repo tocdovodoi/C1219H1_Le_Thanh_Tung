@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu 2</title>
+</head>
+<body>
+<script>
+    //Viêt hàm isMainNumber() để kiểm tra 1 số nguyên có phải là số chính phương không
+    //Số chính phương là số mà căn bậc 2 của số đó là nguyên
+    let number1 = 0;
+    let number2 = -9;
+
+    function isMainNumber(number) {
+        return (Math.sqrt(number)%1 === 0);
+    }
+
+    alert(isMainNumber(number1));
+    alert(isMainNumber(number2));
+</script>
+</body>
+</html>

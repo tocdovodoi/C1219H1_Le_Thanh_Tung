@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Câu 1</title>
+</head>
+<body>
+<script>
+    //Tạo 1 mảng rỗng, nhận 5 giá trị thuộc kiểu nguyên nhập từ bàn phím
+    //
+    let arr = [];
+    //Nhập mảng
+    for (let i = 0; i < 5; i++) {
+        arr[i] = prompt("Nhập phần tử thứ " + (i + 1) + ": ")*1;
+        // arr[i] = parseFloat(prompt("Nhập phần tử thứ " + (i + 1) + ": ")); tương đương nhau
+    }
+    //Hiển thị mảng đã được sắp xếp
+    document.write("Mảng sau khi sắp xếp tăng dần: ");
+    let tam;
+    for (let i = 0; i < arr.length - 1; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+            if (arr[j] < arr[i]) {
+                tam = arr[i];
+                arr[i] = arr[j];
+                arr[j] = tam;
+            }
+        }
+    }
+    document.write(arr);
+
+</script>
+</body>
+</html>
