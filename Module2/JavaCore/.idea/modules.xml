@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/#1_LapTrinhJava/#1_LapTrinhJava.iml" filepath="$PROJECT_DIR$/#1_LapTrinhJava/#1_LapTrinhJava.iml" />
+      <module fileurl="file://$PROJECT_DIR$/#2_MangVaPhuongThuc/#2_MangVaPhuongThuc.iml" filepath="$PROJECT_DIR$/#2_MangVaPhuongThuc/#2_MangVaPhuongThuc.iml" />
       <module fileurl="file://$PROJECT_DIR$/JavaCore.iml" filepath="$PROJECT_DIR$/JavaCore.iml" />
     </modules>
   </component>
