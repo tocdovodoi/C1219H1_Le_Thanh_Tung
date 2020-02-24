@@ -2,7 +2,7 @@ package ThucHanh;
 
 import java.util.Scanner;
 
-public class DaoNguocMang {
+public class HoanViThamTriThamChieu {
     public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
         System.out.print("Nhập độ dài của mảng: ");
