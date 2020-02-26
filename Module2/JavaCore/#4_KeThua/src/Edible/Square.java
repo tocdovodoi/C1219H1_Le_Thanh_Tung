@@ -1,4 +1,4 @@
-package ThucHanhLopDongVat.Edible;
+package Edible;
 
 public class Square extends Rectangle {
     public Square() {

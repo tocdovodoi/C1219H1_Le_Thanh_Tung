@@ -1,4 +1,4 @@
-package ThucHanhLopDongVat.Edible;
+package Edible;
 
 public class Orange extends Fruit {
     @Override

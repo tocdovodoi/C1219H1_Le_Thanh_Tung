@@ -1,4 +1,4 @@
-package ThucHanhLopDongVat.EpKieu;
+package EpKieu;
 
 class Parent {
     public void disp() {
@@ -6,7 +6,7 @@ class Parent {
     }
 }
 class Child extends Parent {
-    public void disp()
+    public void disp2()
     {
         System.out.println("Child disp called");
     }

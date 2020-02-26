@@ -1,5 +1,5 @@
 package ThucHanhLopDongVat.Animal;
-import ThucHanhLopDongVat.Edible.Edible;
+import Edible.Edible;
 
 
 public class AbstractAndInterfaceTests {

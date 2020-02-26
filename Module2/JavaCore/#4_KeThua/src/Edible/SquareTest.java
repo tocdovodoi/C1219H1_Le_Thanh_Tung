@@ -1,4 +1,4 @@
-package ThucHanhLopDongVat.Edible;
+package Edible;
 
 public class SquareTest {
     public static void main(String[] args) {

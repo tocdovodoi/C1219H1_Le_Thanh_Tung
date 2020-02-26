@@ -1,4 +1,4 @@
-package ThucHanhLopDongVat.HinhChuNhat;
+package HinhChuNhat;
 
 class ClassHinhChuNhat {
     private float chieuDai;

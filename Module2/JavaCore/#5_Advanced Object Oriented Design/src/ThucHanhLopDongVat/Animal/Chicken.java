@@ -1,6 +1,6 @@
 package ThucHanhLopDongVat.Animal;
 
-import ThucHanhLopDongVat.Edible.Edible;
+import Edible.Edible;
 
 public class Chicken extends Animal implements Edible {
     @Override

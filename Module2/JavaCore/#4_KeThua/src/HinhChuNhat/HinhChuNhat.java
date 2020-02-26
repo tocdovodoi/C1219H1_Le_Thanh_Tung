@@ -1,4 +1,4 @@
-package ThucHanhLopDongVat.HinhChuNhat;
+package HinhChuNhat;
 
 import java.util.Scanner;
 
