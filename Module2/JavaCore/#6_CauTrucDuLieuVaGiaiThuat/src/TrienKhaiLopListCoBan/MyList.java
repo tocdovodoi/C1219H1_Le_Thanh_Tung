@@ -2,7 +2,7 @@ package TrienKhaiLopListCoBan;
 
 import java.util.Arrays;
 
-public class MyList <E> {
+public class MyList <E> {  //E là element
     private int size = 0;
     private int DEFAULT_CAPACITY = 10;
     private Object elements[];

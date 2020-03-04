@@ -7,11 +7,12 @@ public class TryCatch {
         try {
             int result = number1/number2;
             System.out.println("Kết quả: " + result);
+            System.out.println("Trong try");
         } catch (Exception e) {
-            System.err.println("Không được chia cho 0!");
+            System.err.println("Trong catch");
         } finally {
-            System.out.println("Khối lệnh vẫn chạy dù ngoại lệ xảy ra");
+            System.out.println("Trong finally");
         }
-        System.out.println("Sau khi báo lỗi chương trình vẫn thực hiện tiếp được!");
+        System.out.println("Ngoài try catch");
     }
 }
