@@ -4,18 +4,18 @@ public abstract class Services {
     private String id;
     private String serviceName;
     private double areaUser;
-    private double reantalCosts;
+    private double rentalCosts;
     private int maxNumberOfPeople;
     private String rentType;
 
     public Services() {
     }
 
-    public Services(String id, String serviceName, double areaUser, double reantalCosts, int maxNumberOfPeople, String rentType) {
+    public Services(String id, String serviceName, double areaUser, double rentalCosts, int maxNumberOfPeople, String rentType) {
         this.id = id;
         this.serviceName = serviceName;
         this.areaUser = areaUser;
-        this.reantalCosts = reantalCosts;
+        this.rentalCosts = rentalCosts;
         this.maxNumberOfPeople = maxNumberOfPeople;
         this.rentType = rentType;
     }
@@ -44,12 +44,12 @@ public abstract class Services {
         this.areaUser = areaUser;
     }
 
-    public double getReantalCosts() {
-        return reantalCosts;
+    public double getRentalCosts() {
+        return rentalCosts;
     }
 
-    public void setReantalCosts(double reantalCosts) {
-        this.reantalCosts = reantalCosts;
+    public void setRentalCosts(double rentalCosts) {
+        this.rentalCosts = rentalCosts;
     }
 
     public int getMaxNumberOfPeople() {

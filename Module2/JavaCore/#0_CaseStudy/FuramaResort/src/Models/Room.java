@@ -6,8 +6,8 @@ public class Room extends Services {
     public Room() {
     }
 
-    public Room(String id, String serviceName, double areaUser, double reantalCosts, int maxNumberOfPeople, String rentType, String freeService) {
-        super(id, serviceName, areaUser, reantalCosts, maxNumberOfPeople, rentType);
+    public Room(String id, String serviceName, double areaUser, double rentalCosts, int maxNumberOfPeople, String rentType, String freeService) {
+        super(id, serviceName, areaUser, rentalCosts, maxNumberOfPeople, rentType);
         this.freeService = freeService;
     }
 
@@ -25,7 +25,7 @@ public class Room extends Services {
                 "Service Id: " + super.getId() +
                         "\nService Name: " + super.getServiceName() +
                         "\nArea Used: " + super.getAreaUser() +
-                        "\nRental Costs: " + super.getReantalCosts() +
+                        "\nRental Costs: " + super.getRentalCosts() +
                         "\nMax Number Of People: " + super.getMaxNumberOfPeople() +
                         "\nType Rent: " + super.getRentType() +
                         "\nFree Service: " + this.freeService);

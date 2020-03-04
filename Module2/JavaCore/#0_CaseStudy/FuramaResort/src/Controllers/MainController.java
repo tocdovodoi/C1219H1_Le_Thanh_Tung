@@ -1,19 +1,55 @@
 package Controllers;
 
+import Commons.ScannerUtils;
+
+import static Commons.Menu.displayMainMenu;
+import static Controllers.BookingController.addNewBooking;
+import static Controllers.CustomerController.addNewCustomer;
+import static Controllers.CustomerController.showInformationCustomer;
+import static Controllers.EmployeeController.showInformationEmployee;
+import static Controllers.ServiceController.addNewServices;
+import static Controllers.ServiceController.showServices;
+
 public class MainController {
-    public static void main(String[] args) {
-        disPlayMainMenu();
+    public static void MainController() {
+        try {
+            displayMainMenu();
+            processMainMenu();
+        } catch (Exception e) {
+            backMainMenu();
+        }
     }
 
-    private static void disPlayMainMenu() {
-        System.out.println("--------------Main menu--------------");
-        System.out.println("1. Add New Services." +
-                "\n2. Show Services." +
-                "\n3. Add New Customer." +
-                "\n4. Show Information of Customer" +
-                "\n5. Add New Booking" +
-                "\n6. Show Information of Employee" +
-                "\n7. Exit");
+    public static void processMainMenu() {
+        switch (ScannerUtils.scanner.nextLine()) {
+            case "1":
+//                addNewServices(villa);
+                break;
+            case "2":
+                showServices();
+                break;
+            case "3":
+                addNewCustomer();
+                break;
+            case "4":
+                showInformationCustomer();
+                break;
+            case "5":
+                addNewBooking();
+                break;
+            case "6":
+                showInformationEmployee();
+                break;
+            case "7":
+                System.exit(0);
+                break;
+            default:
+                System.out.println("Please choose (1-7). Enter to continue!");
+                System.out.println();
+                displayMainMenu();
+        }
+    }
+
+    public static void backMainMenu() {
     }
 }
-
