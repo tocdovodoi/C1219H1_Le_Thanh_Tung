@@ -3,6 +3,8 @@ package Controllers;
 import Commons.FuncGeneric;
 import Commons.FuncWireAndReadFileCSV;
 import Commons.ScannerUtils;
+import Models.House;
+import Models.Room;
 import Models.Services;
 import Models.Villa;
 import java.util.ArrayList;
@@ -52,10 +54,10 @@ public class ServiceController {
                 addNewVilla();
                 break;
             case "2":
-//                addNewHouse();
+                addNewHouse();
                 break;
             case "3":
-//                addNewRoom();
+                addNewRoom();
                 break;
             case "4":
 //                processMain();
@@ -71,6 +73,7 @@ public class ServiceController {
         }
     }
 
+    //Add New Villa
     public static void addNewVilla() {
         Services villa = new Villa();
         villa = addNewServices(villa);
@@ -100,7 +103,62 @@ public class ServiceController {
         //write to csv
         FuncWireAndReadFileCSV.writeVillaToFileCsv(villaList);
 
-        System.out.println("----Add Villa: " + villa.getServiceName() + "Successfully");
+        System.out.println("----Add Villa: " + villa.getServiceName() + " Successfully");
+
+        backMainMenu();
+    }
+
+    //Add New House
+    public static void addNewHouse() {
+        Services house = new House();
+        house = addNewServices(house);
+
+        //Room Standard
+        System.out.println("Enter Room Standard: ");
+        ((House) house).setRoomStandard(ScannerUtils.scanner.nextLine());
+
+        //Convenient Description
+        System.out.println("Enter onvenient Description: ");
+        ((House) house).setConvenientDescription(ScannerUtils.scanner.nextLine());
+
+        //Number Of Floors
+        System.out.println("Enter Number Of Floors: ");
+        ((House) house).setNumberOfFloors(Integer.parseInt(ScannerUtils.scanner.nextLine()));
+
+        //Get List House from CSV
+        ArrayList<House> houseList = FuncGeneric.getListFromCSV(FuncGeneric.EntityType.HOUSE);
+
+        //Add House List
+        houseList.add((House) house);
+
+        //write to csv
+        FuncWireAndReadFileCSV.writeHouseToFileCsv(houseList);
+
+        System.out.println("----Add House: " + house.getServiceName() + " Successfully");
+
+        backMainMenu();
+    }
+
+    //Add New Room
+    public static void addNewRoom() {
+        Services room = new Room();
+        room = addNewServices(room);
+
+        //free Service
+        System.out.println("Enter Room Standard: ");
+        ((Room) room).setFreeService(ScannerUtils.scanner.nextLine());
+
+
+        //Get List Room from CSV
+        ArrayList<Room> roomList = FuncGeneric.getListFromCSV(FuncGeneric.EntityType.ROOM);
+
+        //Add Room List
+        roomList.add((Room) room);
+
+        //write to csv
+        FuncWireAndReadFileCSV.writeRoomToFileCsv(roomList);
+
+        System.out.println("----Add Room: " + room.getServiceName() + " Successfully");
 
         backMainMenu();
     }

@@ -1,7 +1,6 @@
 package Controllers;
 
 import Commons.ScannerUtils;
-import Models.Villa;
 
 import static Commons.Menu.displayMainMenu;
 import static Commons.Menu.displayMenuBackToMain;

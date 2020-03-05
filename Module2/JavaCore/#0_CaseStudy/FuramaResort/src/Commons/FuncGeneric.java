@@ -19,9 +19,9 @@ public class FuncGeneric {
     public enum EntityType {
         VILLA,
         HOUSE,
-        ROOM,
-        CUSTOMER,
-        EMPLOYEE
+        ROOM
+//        CUSTOMER,
+//        EMPLOYEE
     }
 
     public static <E> ArrayList<E> getListFromCSV(EntityType entityType) {
@@ -40,14 +40,14 @@ public class FuncGeneric {
                 csvPath = pathRoom;
                 headerRecord = headerRecordRoom;
                 break;
-            case CUSTOMER:
-                csvPath = pathCustomer;
-                headerRecord = headerRecordCustomer;
-                break;
-            case EMPLOYEE:
-                csvPath = pathEmployee;
-                headerRecord = headerRecordEmployee;
-                break;
+//            case CUSTOMER:
+//                csvPath = pathCustomer;
+//                headerRecord = headerRecordCustomer;
+//                break;
+//            case EMPLOYEE:
+//                csvPath = pathEmployee;
+//                headerRecord = headerRecordEmployee;
+//                break;
             default:
                 throw new IllegalStateException("Unexepted value: " + entityType);
         }
