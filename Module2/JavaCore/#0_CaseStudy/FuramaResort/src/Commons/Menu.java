@@ -26,6 +26,20 @@ public class Menu {
         System.out.print("---Please select one function below: ");
     }
 
+    //Show Service
+    public static void displayMenuShowService() {
+        System.out.println("--------------Show service menu--------------");
+        System.out.println("1. Show All Villa." +
+                "\n2. Show All House." +
+                "\n3. Show All Room." +
+                "\n4. Show All Name Villa" +
+                "\n5. Show All Name House" +
+                "\n6. Show All Name Name" +
+                "\n7. Back to menu" +
+                "\n8. Exit");
+        System.out.print("---Please select one function below: ");
+    }
+
 
     public static void displayMenuBackToMain() {
         System.out.println("-------------Enter to continue-----------");

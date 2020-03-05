@@ -20,8 +20,23 @@ public class FuncGeneric {
         VILLA,
         HOUSE,
         ROOM
-//        CUSTOMER,
-//        EMPLOYEE
+    }
+
+    public static <E> void displayList(ArrayList<E> list) {
+        int i = 1;
+        System.out.println("-------------------List---------------------");
+        for (E item : list) {
+            System.out.println("No: " + i);
+            if (item instanceof Villa) {
+                ((Villa) item).showInfor();
+            } else if (item instanceof House) {
+                ((House) item).showInfor();
+            } else if (item instanceof Room) {
+                ((Room) item).showInfor();
+            }
+            i++;
+            System.out.println("--------------------------------------");
+        }
     }
 
     public static <E> ArrayList<E> getListFromCSV(EntityType entityType) {
@@ -40,14 +55,6 @@ public class FuncGeneric {
                 csvPath = pathRoom;
                 headerRecord = headerRecordRoom;
                 break;
-//            case CUSTOMER:
-//                csvPath = pathCustomer;
-//                headerRecord = headerRecordCustomer;
-//                break;
-//            case EMPLOYEE:
-//                csvPath = pathEmployee;
-//                headerRecord = headerRecordEmployee;
-//                break;
             default:
                 throw new IllegalStateException("Unexepted value: " + entityType);
         }

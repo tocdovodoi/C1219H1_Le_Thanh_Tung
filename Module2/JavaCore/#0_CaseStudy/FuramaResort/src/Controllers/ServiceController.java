@@ -9,8 +9,9 @@ import Models.Services;
 import Models.Villa;
 import java.util.ArrayList;
 
+import static Commons.FuncGeneric.displayList;
 import static Commons.Menu.*;
-import static Controllers.MainController.backMainMenu;
+import static Controllers.MainController.*;
 
 public class ServiceController {
 
@@ -165,5 +166,47 @@ public class ServiceController {
 
     //2. Show Service
     public static void showServices() {
+        displayMenuShowService();
+        processMenuShowService();
+    }
+
+    private static void processMenuShowService() {
+        switch (ScannerUtils.scanner.nextLine()) {
+            case "1":
+                showVilla();
+                break;
+            case "2":
+//                showHome();
+                break;
+            case "3":
+//                showRoom();
+                break;
+            case "4":
+//                showAllNameVilla();
+                break;
+            case "5":
+//                showAllNameHouse();
+                break;
+            case "6":
+//                showAllNameRoom();
+                break;
+            case "7":
+                processMain();
+                System.out.println("--------------------------");
+                break;
+            case "8":
+                System.exit(0);
+                break;
+            default:
+                System.out.println("Nhập sai hiển thị lại Menu");
+                backMainMenu();
+                break;
+        }
+    }
+
+    public static void showVilla() {
+        ArrayList<Villa> villasList = FuncGeneric.getListFromCSV(FuncGeneric.EntityType.VILLA);
+        displayList(villasList);
+        backMainMenu();
     }
 }

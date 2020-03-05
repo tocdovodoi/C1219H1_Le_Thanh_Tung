@@ -18,9 +18,6 @@ public class FuncWireAndReadFileCSV {
     public static final String pathVilla = "src/Data/Villa.csv";
     public static final String pathHouse = "src/Data/House.csv";
     public static final String pathRoom = "src/Data/Room.csv";
-//    public static final String pathCustomer = "src/Data/Customer.csv";
-//    public static final String pathEmployee = "src/Data/Employee.csv";
-
 
     //header Villa.csv
     public static String[] headerRecordVilla = new String[]{"id", "serviceName", "areaUser",
@@ -34,13 +31,6 @@ public class FuncWireAndReadFileCSV {
     //header Room.csv
     public static String[] headerRecordRoom = new String[]{"id", "serviceName", "areaUser",
             "rentalCosts", "maxNumberOfPeople", "rentType", "freeService"};
-
-//    //header Customer.csv
-//    public static String[] headerRecordCustomer = new String[]{"fullName","birthday","gender","idCard",
-//            "phone","email","customerType","address"};
-//
-//    //header Employee.csv
-//    public static String[] headerRecordEmployee = new String[]{"id","fullName","age","address"};
 
     //Func write Villa to File CSV
     public static void writeVillaToFileCsv(ArrayList<Villa> arrayList) {
