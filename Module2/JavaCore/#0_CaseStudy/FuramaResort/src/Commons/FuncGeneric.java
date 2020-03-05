@@ -1,23 +1,30 @@
 package Commons;
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.Writer;
+import Models.House;
+import Models.Room;
+import Models.Villa;
+import com.opencsv.bean.ColumnPositionMappingStrategy;
+import com.opencsv.bean.CsvToBean;
+import com.opencsv.bean.CsvToBeanBuilder;
+
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 
-import static Commons.FuncWireAndReadCSV.*;
+import static Commons.FuncWireAndReadFileCSV.*;
 
 public class FuncGeneric {
     public enum EntityType {
         VILLA,
         HOUSE,
-        ROOM
+        ROOM,
+        CUSTOMER,
+        EMPLOYEE
     }
 
-    public static <E> ArrayList<E> getListFromCSV(EntityType entityType) throws IOException {
+    public static <E> ArrayList<E> getListFromCSV(EntityType entityType) {
         String csvPath = "";
         String[] headerRecord;
         switch (entityType) {
@@ -33,6 +40,14 @@ public class FuncGeneric {
                 csvPath = pathRoom;
                 headerRecord = headerRecordRoom;
                 break;
+            case CUSTOMER:
+                csvPath = pathCustomer;
+                headerRecord = headerRecordCustomer;
+                break;
+            case EMPLOYEE:
+                csvPath = pathEmployee;
+                headerRecord = headerRecordEmployee;
+                break;
             default:
                 throw new IllegalStateException("Unexepted value: " + entityType);
         }
@@ -46,6 +61,31 @@ public class FuncGeneric {
             }
         }
 
-
+        ColumnPositionMappingStrategy<E> strategy = new ColumnPositionMappingStrategy<>();
+        switch (entityType) {
+            case VILLA:
+                strategy.setType((Class<? extends E>) Villa.class);
+                break;
+            case HOUSE:
+                strategy.setType((Class<? extends E>) House.class);
+                break;
+            case ROOM:
+                strategy.setType((Class<? extends E>) Room.class);
+                break;
+        }
+        strategy.setColumnMapping(headerRecord);
+        CsvToBean<E> csvToBean = null;
+        try {
+            csvToBean = new CsvToBeanBuilder<E>(new FileReader(csvPath))
+                    .withMappingStrategy(strategy)
+                    .withSeparator(DEFAULT_SEPARATOR)
+                    .withQuoteChar(DEFAULT_QUOTE)
+                    .withSkipLines(NUM_OF_LINE_SKIP)
+                    .withIgnoreLeadingWhiteSpace(true)
+                    .build();
+        } catch (FileNotFoundException e) {
+            System.out.println(e.getMessage());
+        }
+        return (ArrayList<E>) csvToBean.parse();
     }
 }

@@ -1,15 +1,21 @@
 package Controllers;
 
+import Commons.FuncGeneric;
+import Commons.FuncWireAndReadFileCSV;
 import Commons.ScannerUtils;
 import Models.Services;
 import Models.Villa;
-import com.sun.org.apache.xpath.internal.functions.FuncGenerateId;
-
 import java.util.ArrayList;
 
 import static Commons.Menu.*;
+import static Controllers.MainController.backMainMenu;
 
 public class ServiceController {
+
+    public static void  addNewServices() {
+        displayMenuAddNewService();
+        processMenuAddNewService();
+    }
 
     //1. Add New Service
     public static Services addNewServices(Services services) {
@@ -86,7 +92,17 @@ public class ServiceController {
         ((Villa) villa).setNumberOfFloors(Integer.parseInt(ScannerUtils.scanner.nextLine()));
 
         //Get List Villa from CSV
+        ArrayList<Villa> villaList = FuncGeneric.getListFromCSV(FuncGeneric.EntityType.VILLA);
 
+        //Add Villa List
+        villaList.add((Villa) villa);
+
+        //write to csv
+        FuncWireAndReadFileCSV.writeVillaToFileCsv(villaList);
+
+        System.out.println("----Add Villa: " + villa.getServiceName() + "Successfully");
+
+        backMainMenu();
     }
 
     //2. Show Service

@@ -1,8 +1,10 @@
 package Controllers;
 
 import Commons.ScannerUtils;
+import Models.Villa;
 
 import static Commons.Menu.displayMainMenu;
+import static Commons.Menu.displayMenuBackToMain;
 import static Controllers.BookingController.addNewBooking;
 import static Controllers.CustomerController.addNewCustomer;
 import static Controllers.CustomerController.showInformationCustomer;
@@ -11,7 +13,7 @@ import static Controllers.ServiceController.addNewServices;
 import static Controllers.ServiceController.showServices;
 
 public class MainController {
-    public static void MainController() {
+    public static void processMain() {
         try {
             displayMainMenu();
             processMainMenu();
@@ -23,7 +25,7 @@ public class MainController {
     public static void processMainMenu() {
         switch (ScannerUtils.scanner.nextLine()) {
             case "1":
-//                addNewServices(villa);
+                addNewServices();
                 break;
             case "2":
                 showServices();
@@ -51,5 +53,7 @@ public class MainController {
     }
 
     public static void backMainMenu() {
+        displayMenuBackToMain();
+        processMain();
     }
 }
