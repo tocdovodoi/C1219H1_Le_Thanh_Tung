@@ -1,6 +1,7 @@
 package Controllers;
 
 import Commons.FuncGeneric;
+import Commons.FuncValidation;
 import Commons.FuncWireAndReadFileCSV;
 import Commons.ScannerUtils;
 import Models.House;
@@ -15,6 +16,27 @@ import static Controllers.MainController.*;
 
 public class ServiceController {
 
+    public static final String ENTER_SERVICE_ID = "Enter Service ID";
+    public static final String INVALID_SERVICE_ID = "Service ID format SVXX-YYYY";
+    public static final String ENTER_SERVICE_NAME = "Enter Service Name";
+    public static final String INVALID_SERVICE_NAME = "Service name format [A-Z][a-z]";
+    public static final String ENTER_AREA_USED = "Enter area used";
+//    public static final String
+//    public static final String
+//    public static final String
+//    public static final String
+//    public static final String
+//    public static final String
+//    public static final String
+//    public static final String
+//    public static final String
+//    public static final String
+//    public static final String
+//    public static final String
+//    public static final String
+//    public static final String
+//    public static final String
+
     public static void  addNewServices() {
         displayMenuAddNewService();
         processMenuAddNewService();
@@ -24,7 +46,7 @@ public class ServiceController {
     public static Services addNewServices(Services services) {
         //Set Service ID
         System.out.println("Enter service ID: ");
-        services.setId(ScannerUtils.scanner.nextLine());
+        services.setId(FuncValidation.getValidService(services,ENTER_SERVICE_ID,INVALID_SERVICE_ID));
 
         //Set Service name
         System.out.println("Enter service name: ");
@@ -176,19 +198,19 @@ public class ServiceController {
                 showVilla();
                 break;
             case "2":
-//                showHome();
+                showHome();
                 break;
             case "3":
-//                showRoom();
+                showRoom();
                 break;
             case "4":
-//                showAllNameVilla();
+                showAllNameVilla();
                 break;
             case "5":
-//                showAllNameHouse();
+                showAllNameHouse();
                 break;
             case "6":
-//                showAllNameRoom();
+                showAllNameRoom();
                 break;
             case "7":
                 processMain();
@@ -208,5 +230,26 @@ public class ServiceController {
         ArrayList<Villa> villasList = FuncGeneric.getListFromCSV(FuncGeneric.EntityType.VILLA);
         displayList(villasList);
         backMainMenu();
+    }
+
+    public static void showHome() {
+        ArrayList<House> housesList = FuncGeneric.getListFromCSV(FuncGeneric.EntityType.HOUSE);
+        displayList(housesList);
+        backMainMenu();
+    }
+
+    public static void showRoom() {
+        ArrayList<Room> roomsList = FuncGeneric.getListFromCSV(FuncGeneric.EntityType.ROOM);
+        displayList(roomsList);
+        backMainMenu();
+    }
+
+    public static void showAllNameVilla() {
+    }
+
+    public static void showAllNameHouse() {
+    }
+
+    public static void showAllNameRoom() {
     }
 }

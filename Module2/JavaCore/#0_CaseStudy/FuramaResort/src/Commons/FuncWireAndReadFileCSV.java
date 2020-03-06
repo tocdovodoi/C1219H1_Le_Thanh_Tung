@@ -35,12 +35,8 @@ public class FuncWireAndReadFileCSV {
     //Func write Villa to File CSV
     public static void writeVillaToFileCsv(ArrayList<Villa> arrayList) {
         try {
-            Writer writer = new FileWriter(pathVilla);
-            CSVWriter csvWriter = new CSVWriter(writer,
-                    CSVWriter.DEFAULT_SEPARATOR,
-                    CSVWriter.NO_QUOTE_CHARACTER,
-                    CSVWriter.DEFAULT_ESCAPE_CHARACTER,
-                    CSVWriter.DEFAULT_LINE_END);
+            FileWriter writer = new FileWriter(pathVilla);
+            CSVWriter csvWriter = new CSVWriter(writer);
             csvWriter.writeNext(headerRecordVilla);
             for (Villa villa : arrayList) {
                 csvWriter.writeNext(new String[]{
@@ -55,6 +51,7 @@ public class FuncWireAndReadFileCSV {
                         String.valueOf(villa.getAreaPool()),
                         String.valueOf(villa.getNumberOfFloors())});
             }
+            csvWriter.close();  //Lỗi runtime khi lưu file CSV
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
