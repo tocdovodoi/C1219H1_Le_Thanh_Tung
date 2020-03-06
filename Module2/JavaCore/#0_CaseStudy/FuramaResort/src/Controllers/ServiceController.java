@@ -16,26 +16,26 @@ import static Controllers.MainController.*;
 
 public class ServiceController {
 
-    public static final String ENTER_SERVICE_ID = "Enter Service ID";
-    public static final String INVALID_SERVICE_ID = "Service ID format SVXX-YYYY";
-    public static final String ENTER_SERVICE_NAME = "Enter Service Name";
-    public static final String INVALID_SERVICE_NAME = "Service name format [A-Z][a-z]";
-    public static final String ENTER_AREA_USED = "Enter area used";
-//    public static final String
-//    public static final String
-//    public static final String
-//    public static final String
-//    public static final String
-//    public static final String
-//    public static final String
-//    public static final String
-//    public static final String
-//    public static final String
-//    public static final String
-//    public static final String
-//    public static final String
-//    public static final String
-//    public static final String
+    public static final String ENTER_SERVICE_ID = "Nhập ID dịch vụ";
+    public static final String INVALID_SERVICE_ID = "ID dịch vụ định dạng kiểu SVXX-YYYY";
+    public static final String ENTER_SERVICE_NAME = "Nhập tên dịch vụ";
+    public static final String INVALID_SERVICE_NAME = "Chữ cái đầu viết hoa, các chữ sau viết thường";
+    public static final String ENTER_AREA_USED = "Nhập diện tích sử dụng";
+    public static final String INVALID_DOUBLE_NUMBER = "Diện tích sử dụng phải là số thực lớn hơn 30m2";
+    public static final String ENTER_RENTAL_COSTS = "Nhập chi phí thuê";
+    public static final String INVALID_RENTAL_COSTS = "Chi phí thuê phải là số dương";
+    public static final String ENTER_MAX_NUMBER_PEOPLE = "Nhập số lượng người thuê";
+    public static final String INVALID_MAX_NUMBER_PEOPLE = "Số lượng người tối đa phải >0 và nhỏ hơn <20";
+    public static final String ENTER_RENT_TYPE = "Nhập kiểu thuê";
+    public static final String INVALID_RENT_TYPE = "Chữ cái đầu viết hoa, các chữ sau viết thường";
+    public static final String ENTER_ROOM_STANDARD = "Nhập tiêu chuẩn phòng";
+    public static final String INVALID_ROOM_STANDARD = "Chữ cái đầu viết hoa, các chữ sau viết thường";
+    public static final String ENTER_AREA_POOL = "Nhập diện tích hò bơi";
+    public static final String INVALID_AREA_POOL = "Diện tích hồ bơi phải là số thực lớn hơn 30m2";
+    public static final String ENTER_NUMBER_OF_FLOOR = "Nhập số tầng";
+    public static final String INVALID_NUMBER_OF_FLOOR = "Số tầng phải là số nguyên dương";
+    public static final String ENTER_FREE_SERVICE = "Nhập dịch vụ đi kèm";
+    public static final String INVALID_FREE_SERVICE = "Dịch vụ đi kèm phải là các giá trị: massage, karaoke, food, drink, car";
 
     public static void  addNewServices() {
         displayMenuAddNewService();
@@ -45,28 +45,22 @@ public class ServiceController {
     //1. Add New Service
     public static Services addNewServices(Services services) {
         //Set Service ID
-        System.out.println("Enter service ID: ");
         services.setId(FuncValidation.getValidService(services,ENTER_SERVICE_ID,INVALID_SERVICE_ID));
 
         //Set Service name
-        System.out.println("Enter service name: ");
-        services.setServiceName(ScannerUtils.scanner.nextLine());
+        services.setServiceName(FuncValidation.getValidName(ENTER_SERVICE_NAME,INVALID_SERVICE_NAME));
 
         //Set Area Used
-        System.out.println("Enter Area Used: ");
-        services.setAreaUser(Double.parseDouble(ScannerUtils.scanner.nextLine()));
+        services.setAreaUser(FuncValidation.getValidNumberDouble(ENTER_AREA_USED,INVALID_DOUBLE_NUMBER,30.0));
 
         //Set Rental Costs
-        System.out.println("Enter Rental Costs: ");
-        services.setRentalCosts(Double.parseDouble(ScannerUtils.scanner.nextLine()));
+        services.setRentalCosts(FuncValidation.getValidNumberDouble(ENTER_RENTAL_COSTS, INVALID_RENTAL_COSTS, 0.0));
 
         //Set Max Number Of People
-        System.out.println("Enter Max Number Of People: ");
-        services.setMaxNumberOfPeople(Integer.parseInt(ScannerUtils.scanner.nextLine()));
+        services.setMaxNumberOfPeople(FuncValidation.getValidNumberInterger(ENTER_MAX_NUMBER_PEOPLE,INVALID_MAX_NUMBER_PEOPLE,0,20));
 
         //Set Rent Type
-        System.out.println("Enter Rent Type: ");
-        services.setRentType(ScannerUtils.scanner.nextLine());
+        services.setRentType(FuncValidation.getValidName(ENTER_RENT_TYPE,INVALID_RENT_TYPE));
 
         return services;
     }
