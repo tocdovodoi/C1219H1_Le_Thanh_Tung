@@ -21,7 +21,7 @@ public class ServiceController {
     public static final String ENTER_SERVICE_NAME = "Nhập tên dịch vụ";
     public static final String INVALID_SERVICE_NAME = "Chữ cái đầu viết hoa, các chữ sau viết thường";
     public static final String ENTER_AREA_USED = "Nhập diện tích sử dụng";
-    public static final String INVALID_DOUBLE_NUMBER = "Diện tích sử dụng phải là số thực lớn hơn 30m2";
+    public static final String INVALID_AREA_USED = "Diện tích sử dụng phải là số thực lớn hơn 30m2";
     public static final String ENTER_RENTAL_COSTS = "Nhập chi phí thuê";
     public static final String INVALID_RENTAL_COSTS = "Chi phí thuê phải là số dương";
     public static final String ENTER_MAX_NUMBER_PEOPLE = "Nhập số lượng người thuê";
@@ -51,7 +51,7 @@ public class ServiceController {
         services.setServiceName(FuncValidation.getValidName(ENTER_SERVICE_NAME,INVALID_SERVICE_NAME));
 
         //Set Area Used
-        services.setAreaUser(FuncValidation.getValidNumberDouble(ENTER_AREA_USED,INVALID_DOUBLE_NUMBER,30.0));
+        services.setAreaUser(FuncValidation.getValidNumberDouble(ENTER_AREA_USED,INVALID_AREA_USED,30.0));
 
         //Set Rental Costs
         services.setRentalCosts(FuncValidation.getValidNumberDouble(ENTER_RENTAL_COSTS, INVALID_RENTAL_COSTS, 0.0));
@@ -96,20 +96,17 @@ public class ServiceController {
         villa = addNewServices(villa);
 
         //Room Standard
-        System.out.println("Enter Room Standard: ");
-        ((Villa) villa).setRoomStandard(ScannerUtils.scanner.nextLine());
+        ((Villa) villa).setRoomStandard(FuncValidation.getValidName(ENTER_ROOM_STANDARD,INVALID_ROOM_STANDARD));
 
         //Convenient Description
-        System.out.println("Enter onvenient Description: ");
+        System.out.println("Enter convenient Description: ");
         ((Villa) villa).setConvenientDescription(ScannerUtils.scanner.nextLine());
 
         //Area Pool
-        System.out.println("Enter Area Pool: ");
-        ((Villa) villa).setAreaPool(Double.parseDouble(ScannerUtils.scanner.nextLine()));
+        ((Villa) villa).setAreaPool(FuncValidation.getValidNumberDouble(ENTER_AREA_POOL,INVALID_AREA_POOL,30.0));
 
         //Number Of Floors
-        System.out.println("Enter Number Of Floors: ");
-        ((Villa) villa).setNumberOfFloors(Integer.parseInt(ScannerUtils.scanner.nextLine()));
+        ((Villa) villa).setNumberOfFloors(FuncValidation.getValidNumberInterger(ENTER_NUMBER_OF_FLOOR,INVALID_NUMBER_OF_FLOOR,0,20));
 
         //Get List Villa from CSV
         ArrayList<Villa> villaList = FuncGeneric.getListFromCSV(FuncGeneric.EntityType.VILLA);
@@ -131,16 +128,14 @@ public class ServiceController {
         house = addNewServices(house);
 
         //Room Standard
-        System.out.println("Enter Room Standard: ");
-        ((House) house).setRoomStandard(ScannerUtils.scanner.nextLine());
+        ((House) house).setRoomStandard(FuncValidation.getValidName(ENTER_ROOM_STANDARD,INVALID_ROOM_STANDARD));
 
         //Convenient Description
-        System.out.println("Enter onvenient Description: ");
+        System.out.println("Enter convenient Description: ");
         ((House) house).setConvenientDescription(ScannerUtils.scanner.nextLine());
 
         //Number Of Floors
-        System.out.println("Enter Number Of Floors: ");
-        ((House) house).setNumberOfFloors(Integer.parseInt(ScannerUtils.scanner.nextLine()));
+        ((House) house).setNumberOfFloors(FuncValidation.getValidNumberInterger(ENTER_NUMBER_OF_FLOOR,INVALID_NUMBER_OF_FLOOR,0,20));
 
         //Get List House from CSV
         ArrayList<House> houseList = FuncGeneric.getListFromCSV(FuncGeneric.EntityType.HOUSE);
@@ -162,8 +157,7 @@ public class ServiceController {
         room = addNewServices(room);
 
         //free Service
-        System.out.println("Enter Room Standard: ");
-        ((Room) room).setFreeService(ScannerUtils.scanner.nextLine());
+        ((Room) room).setFreeService(FuncValidation.getValidFreeService(ENTER_FREE_SERVICE,INVALID_FREE_SERVICE));
 
 
         //Get List Room from CSV

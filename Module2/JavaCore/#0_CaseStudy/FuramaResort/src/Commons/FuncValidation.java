@@ -30,6 +30,16 @@ public class FuncValidation {
         return string.matches(pattern);
     }
 
+    public static String getValidFreeService(String strDisplay, String errMes) {
+        System.out.println(strDisplay);
+        String result = ScannerUtils.scanner.nextLine();
+        if (!isValidNameService(result)) {
+            System.out.println(errMes);
+            result = getValidName(strDisplay, errMes);
+        }
+        return result;
+    }
+
     public static String getValidService(Services services, String strDisplay, String errMes) {
         System.out.println(strDisplay);
         String result = ScannerUtils.scanner.nextLine();
@@ -49,6 +59,10 @@ public class FuncValidation {
         return result;
     }
 
+//    public static double getValidNumberDouble(String strDisplay, String errMes) {
+//        return getValidNumberDouble(strDisplay,errMes,null);
+//    }
+
     public static double getValidNumberDouble(String strDisplay, String errMes, Double min) {
         double result = 0.0;
         System.out.println(strDisplay);
@@ -64,6 +78,10 @@ public class FuncValidation {
         return result;
     }
 
+//    public static Integer getValidNumberInterger(String strDisplay, String errMes, Integer min) {
+//        return getValidNumberInterger(strDisplay, errMes, 0, null);
+//    }
+
     public static Integer getValidNumberInterger(String strDisplay, String errMes, Integer min, Integer max) {
         int result = 0;
         System.out.println(strDisplay);
@@ -72,7 +90,7 @@ public class FuncValidation {
             if (min != null && result <= min) {
                 throw new Exception(errMes);
             }
-            if (max != null && result >= min) {
+            if (max != null && result >= max) {
                 throw new Exception(errMes);
             }
         } catch (Exception e) {
