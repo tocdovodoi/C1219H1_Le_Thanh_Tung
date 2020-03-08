@@ -9,6 +9,7 @@ import com.opencsv.CSVWriter;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.TreeSet;
 
 public class FuncWireAndReadFileCSV {
     public static final char DEFAULT_SEPARATOR = ',';
@@ -20,6 +21,7 @@ public class FuncWireAndReadFileCSV {
     public static final String pathRoom = "src/Data/Room.csv";
     public static final String pathCustomer = "src/Data/Customer.csv";
     public static final String pathBooking = "src/Data/Booking.csv";
+    public static final String pathEmployee = "src/Data/Employee.csv";
 
     //header Villa.csv
     public static String[] headerRecordVilla = new String[]{"id", "serviceName", "areaUser",
@@ -42,6 +44,9 @@ public class FuncWireAndReadFileCSV {
     public static String[] headerRecordBooking = new String[]{"fullName", "birthday", "gender",
             "idCard", "phone", "email", "customerType", "address","id","serviceName","areaUser",
             "rentalCosts","maxNumberOfPeople","rentType"};
+
+    //header Employee.csv
+    public static String[] headerRecordEmployee = new String[]{"id","fullName", "age", "address"};
 
     //Func write Villa to File CSV
     public static void writeVillaToFileCsv(ArrayList<Villa> arrayList) {
@@ -205,6 +210,41 @@ public class FuncWireAndReadFileCSV {
         } catch (IOException e) {
             System.out.println(e.getMessage());
         }
+    }
+
+    public static TreeSet<String> getAllNameServiceFromCSV(String path) {
+        BufferedReader br = null;
+        TreeSet<String> result = new TreeSet();
+        try {
+            String line;
+            br = new BufferedReader(new FileReader(path));
+            while ((line = br.readLine()) != null) {
+                if (getNameServiceFromFile(line).equals("serviceName")) {
+                    continue;
+                }
+                result.add(getNameServiceFromFile(line));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (br != null) br.close();
+            } catch (IOException crunchifyException) {
+                crunchifyException.printStackTrace();
+            }
+        }
+//        Bình thường TreeSet sắp xếp tăng dần, còn giảm dần dùng hàm
+//        result.descendingSet();
+        return result;
+    }
+
+    public static String getNameServiceFromFile(String csvLine) {
+        String name = "";
+        if (csvLine != null) {
+            String [] splitData = csvLine.split(",");
+            name = splitData[1];
+        }
+        return name;
     }
 
 }

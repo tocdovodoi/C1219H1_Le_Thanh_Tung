@@ -1,9 +1,6 @@
 package Commons;
 
-import Models.Customer;
-import Models.House;
-import Models.Room;
-import Models.Villa;
+import Models.*;
 import com.opencsv.bean.ColumnPositionMappingStrategy;
 import com.opencsv.bean.CsvToBean;
 import com.opencsv.bean.CsvToBeanBuilder;
@@ -13,15 +10,18 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
+import java.util.TreeSet;
 
 import static Commons.FuncWireAndReadFileCSV.*;
+import static Controllers.MainController.backMainMenu;
 
 public class FuncGeneric {
     public enum EntityType {
         VILLA,
         HOUSE,
         ROOM,
-        CUSTOMER
+        CUSTOMER,
+        EMPLOYEE
     }
 
     public static <E> void displayList(ArrayList<E> list) {
@@ -63,6 +63,10 @@ public class FuncGeneric {
                 csvPath = pathCustomer;
                 headerRecord = headerRecordCustomer;
                 break;
+            case EMPLOYEE:
+                csvPath = pathEmployee;
+                headerRecord = headerRecordEmployee;
+                break;
             default:
                 throw new IllegalStateException("Unexepted value: " + entityType);
         }
@@ -89,6 +93,10 @@ public class FuncGeneric {
                 break;
             case CUSTOMER:
                 strategy.setType((Class<? extends E>) Customer.class);
+                break;
+            case EMPLOYEE:
+                strategy.setType((Class<? extends E>) Employee.class);
+                break;
         }
         strategy.setColumnMapping(headerRecord);
         CsvToBean<E> csvToBean = null;
@@ -104,5 +112,32 @@ public class FuncGeneric {
             System.out.println(e.getMessage());
         }
         return (ArrayList<E>) csvToBean.parse();
+    }
+
+    public static void showAllNameNotDulicate(EntityType entityType) {
+        String csvPath = "";
+        switch (entityType) {
+            case VILLA:
+                csvPath = pathVilla;
+                break;
+            case HOUSE:
+                csvPath = pathHouse;
+                break;
+            case ROOM:
+                csvPath = pathRoom;
+                break;
+        }
+        Path path = Paths.get(csvPath);
+        if (!Files.exists(path)) {
+            System.out.println("---------File csv path do not Exists");
+            backMainMenu();
+        }
+        TreeSet<String> treeSet = FuncWireAndReadFileCSV.getAllNameServiceFromCSV(csvPath);
+        System.out.println("-----------List Name Service Not Duplicate");
+        for (String str : treeSet) {
+            System.out.println(str);
+            System.out.println("--------------------");
+        }
+        backMainMenu();
     }
 }

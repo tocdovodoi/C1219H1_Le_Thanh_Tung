@@ -11,6 +11,7 @@ import Models.Villa;
 import java.util.ArrayList;
 
 import static Commons.FuncGeneric.displayList;
+import static Commons.FuncGeneric.showAllNameNotDulicate;
 import static Commons.Menu.*;
 import static Controllers.MainController.*;
 
@@ -246,11 +247,14 @@ public class ServiceController {
     }
 
     public static void showAllNameVilla() {
+        showAllNameNotDulicate(FuncGeneric.EntityType.VILLA);
     }
 
     public static void showAllNameHouse() {
+        showAllNameNotDulicate(FuncGeneric.EntityType.HOUSE);
     }
 
     public static void showAllNameRoom() {
+        showAllNameNotDulicate(FuncGeneric.EntityType.ROOM);
     }
 }
