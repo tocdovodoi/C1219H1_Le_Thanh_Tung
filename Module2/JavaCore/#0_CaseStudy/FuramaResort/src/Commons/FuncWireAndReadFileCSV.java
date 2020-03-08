@@ -1,5 +1,6 @@
 package Commons;
 
+import Models.Customer;
 import Models.House;
 import Models.Room;
 import Models.Villa;
@@ -18,6 +19,7 @@ public class FuncWireAndReadFileCSV {
     public static final String pathVilla = "src/Data/Villa.csv";
     public static final String pathHouse = "src/Data/House.csv";
     public static final String pathRoom = "src/Data/Room.csv";
+    public static final String pathCustomer = "src/Data/Customer.csv";
 
     //header Villa.csv
     public static String[] headerRecordVilla = new String[]{"id", "serviceName", "areaUser",
@@ -31,6 +33,10 @@ public class FuncWireAndReadFileCSV {
     //header Room.csv
     public static String[] headerRecordRoom = new String[]{"id", "serviceName", "areaUser",
             "rentalCosts", "maxNumberOfPeople", "rentType", "freeService"};
+
+    //header Customer.csv
+    public static String[] headerRecordCustomer = new String[]{"fullName", "birthday", "gender",
+            "idCard", "phone", "email", "customerType","address"};
 
     //Func write Villa to File CSV
     public static void writeVillaToFileCsv(ArrayList<Villa> arrayList) {
@@ -61,11 +67,7 @@ public class FuncWireAndReadFileCSV {
     public static void writeHouseToFileCsv(ArrayList<House> arrayList) {
         try {
             Writer writer = new FileWriter(pathHouse);
-            CSVWriter csvWriter = new CSVWriter(writer,
-                    CSVWriter.DEFAULT_SEPARATOR,
-                    CSVWriter.NO_QUOTE_CHARACTER,
-                    CSVWriter.DEFAULT_ESCAPE_CHARACTER,
-                    CSVWriter.DEFAULT_LINE_END);
+            CSVWriter csvWriter = new CSVWriter(writer);
             csvWriter.writeNext(headerRecordHouse);
             for (House house : arrayList) {
                 csvWriter.writeNext(new String[]{
@@ -88,11 +90,7 @@ public class FuncWireAndReadFileCSV {
     public static void writeRoomToFileCsv(ArrayList<Room> arrayList) {
         try {
             Writer writer = new FileWriter(pathRoom);
-            CSVWriter csvWriter = new CSVWriter(writer,
-                    CSVWriter.DEFAULT_SEPARATOR,
-                    CSVWriter.NO_QUOTE_CHARACTER,
-                    CSVWriter.DEFAULT_ESCAPE_CHARACTER,
-                    CSVWriter.DEFAULT_LINE_END);
+            CSVWriter csvWriter = new CSVWriter(writer);
             csvWriter.writeNext(headerRecordRoom);
             for (Room room : arrayList) {
                 csvWriter.writeNext(new String[]{
@@ -103,6 +101,28 @@ public class FuncWireAndReadFileCSV {
                         String.valueOf(room.getMaxNumberOfPeople()),
                         room.getRentType(),
                         String.valueOf(room.getFreeService())});
+            }
+        } catch (IOException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+
+    //Func write Customer to File CSV
+    public static void writeCustomerToFileCsv(ArrayList<Customer> arrayList) {
+        try {
+            Writer writer = new FileWriter(pathCustomer);
+            CSVWriter csvWriter = new CSVWriter(writer);
+            csvWriter.writeNext(headerRecordCustomer);
+            for (Customer customer : arrayList) {
+                csvWriter.writeNext(new String[]{
+                        customer.getFullName(),
+                        customer.getBirthday(),
+                        customer.getGender(),
+                        customer.getIdCard(),
+                        customer.getPhone(),
+                        customer.getEmail(),
+                        customer.getCustomerType(),
+                        customer.getAddress()});
             }
         } catch (IOException e) {
             System.out.println(e.getMessage());

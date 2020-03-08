@@ -19,7 +19,8 @@ public class FuncGeneric {
     public enum EntityType {
         VILLA,
         HOUSE,
-        ROOM
+        ROOM,
+        CUSTOMER
     }
 
     public static <E> void displayList(ArrayList<E> list) {

@@ -37,6 +37,17 @@ public class ServiceController {
     public static final String ENTER_FREE_SERVICE = "Nhập dịch vụ đi kèm";
     public static final String INVALID_FREE_SERVICE = "Dịch vụ đi kèm phải là các giá trị: massage, karaoke, food, drink, car";
 
+    public static final String ENTER_CUSTOMER_NAME = "Nhập tên";
+    public static final String INVALID_CUSTOMER_NAME = "Chữ cái đầu viết hoa, các chữ sau viết thường";
+    public static final String ENTER_CUSTOMER_BIRTHDAY = "Nhập ngày sinh";
+    public static final String INVALID_CUSTOMER_BIRTHDAY = "Ngày sinh theo định dạng dd/MM/yyy, năm sinh >1900 và nhỏ hơn ngày hiện tại là 18 năm";
+    public static final String ENTER_CUSTOMER_GENDER = "Nhập giới tính";
+    public static final String INVALID_CUSTOMER_GENDER = "Male hoặc Female hoặc Unknow";
+    public static final String ENTER_CUSTOMER_IDCARD = "Nhập Id";
+    public static final String INVALID_CUSTOMER_IDCARD = "ID Card gồm 9 chữ số";
+    public static final String ENTER_CUSTOMER_EMAIL = "Nhập email";
+    public static final String INVALID_CUSTOMER_EMAIL = "Email phải đúng định dạng abc@abc.abc";
+
     public static void  addNewServices() {
         displayMenuAddNewService();
         processMenuAddNewService();
@@ -99,7 +110,7 @@ public class ServiceController {
         ((Villa) villa).setRoomStandard(FuncValidation.getValidName(ENTER_ROOM_STANDARD,INVALID_ROOM_STANDARD));
 
         //Convenient Description
-        System.out.println("Enter convenient Description: ");
+        System.out.println("Nhập tên tiện ích: ");
         ((Villa) villa).setConvenientDescription(ScannerUtils.scanner.nextLine());
 
         //Area Pool
@@ -131,7 +142,7 @@ public class ServiceController {
         ((House) house).setRoomStandard(FuncValidation.getValidName(ENTER_ROOM_STANDARD,INVALID_ROOM_STANDARD));
 
         //Convenient Description
-        System.out.println("Enter convenient Description: ");
+        System.out.println("Nhập tên tiện ích: ");
         ((House) house).setConvenientDescription(ScannerUtils.scanner.nextLine());
 
         //Number Of Floors
