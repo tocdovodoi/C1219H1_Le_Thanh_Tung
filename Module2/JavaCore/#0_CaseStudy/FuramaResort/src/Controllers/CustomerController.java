@@ -5,9 +5,11 @@ import Commons.FuncValidation;
 import Commons.FuncWireAndReadFileCSV;
 import Commons.ScannerUtils;
 import Models.Customer;
+import Models.SortNameAndYear;
 
 import java.util.ArrayList;
 
+import static Commons.FuncGeneric.displayList;
 import static Controllers.MainController.backMainMenu;
 import static Controllers.ServiceController.*;
 
@@ -60,6 +62,10 @@ public class CustomerController {
 
     //Show Information of Customer
     public static void showInformationCustomer() {
-
+        ArrayList<Customer> customerList = FuncGeneric.getListFromCSV(FuncGeneric.EntityType.CUSTOMER);
+        //Sắp xếp theo alpha b theo tên, trường hợp trùng tên thì sắp xếp theo năm sinh
+        customerList.sort(new SortNameAndYear());
+        displayList(customerList);
+        backMainMenu();
     }
 }

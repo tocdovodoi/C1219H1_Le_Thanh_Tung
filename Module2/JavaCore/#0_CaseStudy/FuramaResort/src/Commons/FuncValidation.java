@@ -135,7 +135,7 @@ public class FuncValidation {
             }
             int year = Integer.parseInt(result.substring(6, 10));
             int currentYear = Calendar.getInstance().get(Calendar.YEAR);
-            if (year <= 1990 || currentYear - year <= 18) {
+            if (year <= 1900 || (currentYear) - year <= 18) {
                 throw new BirthdayException(errMes);
             }
         } catch (BirthdayException e) {

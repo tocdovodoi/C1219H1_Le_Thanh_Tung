@@ -40,6 +40,16 @@ public class Menu {
         System.out.print("---Please select one function below: ");
     }
 
+    //Booking Menu
+    public static void displayMenuBooking() {
+        System.out.println("--------------Booking menu--------------");
+        System.out.println("1. Booking Villa." +
+                "\n2. Booking House." +
+                "\n3. Booking Room." +
+                "\n4. Back to menu" +
+                "\n5. Exit");
+        System.out.print("---Please select one function below: ");
+    }
 
     public static void displayMenuBackToMain() {
         System.out.println("-------------Enter to continue-----------");

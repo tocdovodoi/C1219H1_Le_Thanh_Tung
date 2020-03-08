@@ -1,5 +1,6 @@
 package Commons;
 
+import Models.Customer;
 import Models.House;
 import Models.Room;
 import Models.Villa;
@@ -34,6 +35,8 @@ public class FuncGeneric {
                 ((House) item).showInfor();
             } else if (item instanceof Room) {
                 ((Room) item).showInfor();
+            } else if (item instanceof Customer) {
+                ((Customer) item).showInfor();
             }
             i++;
             System.out.println("--------------------------------------");
@@ -55,6 +58,10 @@ public class FuncGeneric {
             case ROOM:
                 csvPath = pathRoom;
                 headerRecord = headerRecordRoom;
+                break;
+            case CUSTOMER:
+                csvPath = pathCustomer;
+                headerRecord = headerRecordCustomer;
                 break;
             default:
                 throw new IllegalStateException("Unexepted value: " + entityType);
@@ -80,6 +87,8 @@ public class FuncGeneric {
             case ROOM:
                 strategy.setType((Class<? extends E>) Room.class);
                 break;
+            case CUSTOMER:
+                strategy.setType((Class<? extends E>) Customer.class);
         }
         strategy.setColumnMapping(headerRecord);
         CsvToBean<E> csvToBean = null;

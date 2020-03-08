@@ -16,6 +16,7 @@ import static Controllers.MainController.*;
 
 public class ServiceController {
 
+    //Service
     public static final String ENTER_SERVICE_ID = "Nhập ID dịch vụ";
     public static final String INVALID_SERVICE_ID = "ID dịch vụ định dạng kiểu SVXX-YYYY";
     public static final String ENTER_SERVICE_NAME = "Nhập tên dịch vụ";
@@ -30,13 +31,14 @@ public class ServiceController {
     public static final String INVALID_RENT_TYPE = "Chữ cái đầu viết hoa, các chữ sau viết thường";
     public static final String ENTER_ROOM_STANDARD = "Nhập tiêu chuẩn phòng";
     public static final String INVALID_ROOM_STANDARD = "Chữ cái đầu viết hoa, các chữ sau viết thường";
-    public static final String ENTER_AREA_POOL = "Nhập diện tích hò bơi";
+    public static final String ENTER_AREA_POOL = "Nhập diện tích hồ bơi";
     public static final String INVALID_AREA_POOL = "Diện tích hồ bơi phải là số thực lớn hơn 30m2";
     public static final String ENTER_NUMBER_OF_FLOOR = "Nhập số tầng";
     public static final String INVALID_NUMBER_OF_FLOOR = "Số tầng phải là số nguyên dương";
     public static final String ENTER_FREE_SERVICE = "Nhập dịch vụ đi kèm";
     public static final String INVALID_FREE_SERVICE = "Dịch vụ đi kèm phải là các giá trị: massage, karaoke, food, drink, car";
 
+    //Customer
     public static final String ENTER_CUSTOMER_NAME = "Nhập tên";
     public static final String INVALID_CUSTOMER_NAME = "Chữ cái đầu viết hoa, các chữ sau viết thường";
     public static final String ENTER_CUSTOMER_BIRTHDAY = "Nhập ngày sinh";
@@ -88,7 +90,7 @@ public class ServiceController {
                 addNewRoom();
                 break;
             case "4":
-//                processMain();
+                processMain();
                 System.out.println("\n-------------------------");
                 break;
             case "5":
