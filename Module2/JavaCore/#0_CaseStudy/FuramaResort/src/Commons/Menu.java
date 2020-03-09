@@ -11,7 +11,9 @@ public class Menu {
                 "\n4. Show Information of Customer" +
                 "\n5. Add New Booking" +
                 "\n6. Show Information of Employee" +
-                "\n7. Exit");
+                "\n7. Booking Movie Ticket 4D" +
+                "\n8. Find Employee" +
+                "\n9. Exit");
         System.out.print("---Please select one function below: ");
     }
 
@@ -48,6 +50,15 @@ public class Menu {
                 "\n3. Booking Room." +
                 "\n4. Back to menu" +
                 "\n5. Exit");
+        System.out.print("---Please select one function below: ");
+    }
+
+    public static void displayMenuBookingMovieTicket4D() {
+        System.out.println("--------------Booking menu ticket 4D--------------");
+        System.out.println("1. Booking movie ticket." +
+                "\n2. Show customer booking movie ticket." +
+                "\n3. Back to menu" +
+                "\n4. Exit");
         System.out.print("---Please select one function below: ");
     }
 

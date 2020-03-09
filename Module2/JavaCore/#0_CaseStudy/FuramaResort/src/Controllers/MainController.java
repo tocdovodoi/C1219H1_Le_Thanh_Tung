@@ -2,9 +2,9 @@ package Controllers;
 
 import Commons.ScannerUtils;
 
-import static Commons.Menu.displayMainMenu;
-import static Commons.Menu.displayMenuBackToMain;
+import static Commons.Menu.*;
 import static Controllers.BookingController.addNewBooking;
+import static Controllers.BookingController.bookingMovieTicket4D;
 import static Controllers.CustomerController.addNewCustomer;
 import static Controllers.CustomerController.showInformationCustomer;
 import static Controllers.EmployeeController.showInformationEmployee;
@@ -42,10 +42,15 @@ public class MainController {
                 showInformationEmployee();
                 break;
             case "7":
+                bookingMovieTicket4D();
+                break;
+            case "8":
+                break;
+            case "9":
                 System.exit(0);
                 break;
             default:
-                System.out.println("Please choose (1-7). Enter to continue!");
+                System.out.println("Please choose (1-9). Enter to continue!");
                 System.out.println();
                 displayMainMenu();
         }

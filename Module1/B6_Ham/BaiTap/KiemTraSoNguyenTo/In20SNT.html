@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiểm tra số nguyên tố</title>
+</head>
+<body>
+<script>
+    let count = 0;
+    //Tạo vòng lặp vô hạn
+    for (let i = 2; ; i++) {
+        if (checkSNT(i) == true) {
+            document.write(i + " ");
+            count++;
+            if (count == 20) {
+                break;
+            }
+        }
+    }
+
+    //Hàm kiểm tra số nguyên tố
+    function checkSNT(number) {
+        for (let i = 2; i < number; i++) {
+            if (number % i === 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+</script>
+</body>
+</html>
