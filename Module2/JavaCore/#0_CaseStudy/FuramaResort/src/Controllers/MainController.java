@@ -7,6 +7,7 @@ import static Controllers.BookingController.addNewBooking;
 import static Controllers.BookingController.bookingMovieTicket4D;
 import static Controllers.CustomerController.addNewCustomer;
 import static Controllers.CustomerController.showInformationCustomer;
+import static Controllers.EmployeeController.findEmployeeFromResume;
 import static Controllers.EmployeeController.showInformationEmployee;
 import static Controllers.ServiceController.addNewServices;
 import static Controllers.ServiceController.showServices;
@@ -45,6 +46,7 @@ public class MainController {
                 bookingMovieTicket4D();
                 break;
             case "8":
+                findEmployeeFromResume();
                 break;
             case "9":
                 System.exit(0);

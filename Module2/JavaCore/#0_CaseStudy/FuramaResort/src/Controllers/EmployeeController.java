@@ -1,6 +1,8 @@
 package Controllers;
 
 import Commons.FuncGeneric;
+import Commons.ScannerUtils;
+import Data.Resume;
 import Models.Employee;
 
 import java.util.*;
@@ -25,5 +27,28 @@ public class EmployeeController {
             System.out.println("key" + m.getKey() +
             "\n" + m.getValue().toString());
         }
+    }
+
+    //Hàm tìm kiếm employee trong stack
+    public static void findEmployeeFromResume() {
+        Stack<Employee> employeeStack = Resume.getAllEmployee();
+        System.out.println("Nhập key của employee");
+        String inputSearch = ScannerUtils.scanner.nextLine();
+        try {
+            while (true) {
+                boolean foundById = employeeStack.peek().getId().contains(inputSearch);
+                if (!foundById) {
+                    employeeStack.pop();
+                } else {
+                    System.out.println("Founded employee below");
+                    System.out.println(employeeStack.peek().toString());
+                    break;
+                }
+            }
+        } catch (EmptyStackException ex) {
+            System.out.println("key invalid, please try again");
+            findEmployeeFromResume();
+        }
+        backMainMenu();
     }
 }
