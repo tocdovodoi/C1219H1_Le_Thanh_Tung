@@ -1,7 +1,7 @@
 -- TASK 2.	Hiển thị thông tin của tất cả nhân viên có trong hệ thống 
 -- có tên bắt đầu là một trong các ký tự “H”, “T” hoặc “K” và có tối đa 15 ký tự.
 -- ----------------------------------
-
+use case_study_furama_resort;
 select * 
 from nhan_vien
 -- {Tìm theo chữ cái đầu của ho_ten, câu lệnh dài}

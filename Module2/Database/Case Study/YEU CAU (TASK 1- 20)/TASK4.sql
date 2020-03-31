@@ -7,7 +7,7 @@
 -- group by loai_khach 
 -- count id_hop_dong để đếm số lần đặt phòng
 -- ----------------------------------------------------------------------------
-
+use case_study_furama_resort;
 select khach_hang.id_khach_hang,khach_hang.ho_ten,loai_khach.ten_loai_khach,count(id_hop_dong) as 'số lần đặt phòng'
 from khach_hang
 inner join hop_dong

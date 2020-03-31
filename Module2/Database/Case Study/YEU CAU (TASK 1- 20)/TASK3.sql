@@ -5,6 +5,7 @@
 -- between lấy cả 18 và 50
 -- in để nhóm các câu lệnh or
 -- --------------------------------------------
+use case_study_furama_resort;
 select * from khach_hang
 where
 (year(curdate())- year(ngay_sinh) between 18 and 50)  and dia_chi in('Da Nang', 'Quang Tri')

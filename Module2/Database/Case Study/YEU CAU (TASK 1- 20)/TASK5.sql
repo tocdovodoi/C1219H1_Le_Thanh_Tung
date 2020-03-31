@@ -5,6 +5,7 @@
 -- yêu cầu phải dùng left join khach_hang với tất cả các table còn lại 
 -- group by ho_ten và sắp sếp id_khach_hang
 -- --------------------------------------------------------------------------------------------------------------------
+use case_study_furama_resort;
 select 
 khach_hang.id_khach_hang,
 khach_hang.ho_ten,
