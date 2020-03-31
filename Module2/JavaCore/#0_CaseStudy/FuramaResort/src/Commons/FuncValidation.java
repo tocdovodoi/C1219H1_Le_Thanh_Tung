@@ -37,7 +37,7 @@ public class FuncValidation {
     public static String getValidFreeService(String strDisplay, String errMes) {
         System.out.println(strDisplay);
         String result = ScannerUtils.scanner.nextLine();
-        if (!isValidNameService(result)) {
+        if (!isValidFreeService(result)) {
             System.out.println(errMes);
             result = getValidName(strDisplay, errMes);
         }
