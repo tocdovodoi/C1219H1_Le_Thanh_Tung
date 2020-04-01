@@ -81,4 +81,7 @@ insert into hop_dong (ngay_lam_hop_dong,ngay_ket_thuc,tien_dat_coc,id_nhan_vien,
 values 
 ('2019-06-20', '2019-09-30', 50000000, 4, 5, 4);
 -- ------------------------------------------------------------------------------------------------------
-
+insert into hop_dong (ngay_lam_hop_dong,ngay_ket_thuc,tien_dat_coc,id_nhan_vien,id_khach_hang,id_dich_vu)
+values 
+('2016-06-20', '2017-09-30', 50000000, 19, 3, 4);
+-- ------------------------------------------------------------------------------------------------------

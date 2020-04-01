@@ -21,3 +21,12 @@ values
 ('Phan Ha Nguyen Hai','1995/05/19', 673789501, 5000000, '0713 822 392', 'hai@gmail.com', 'Da Lat', 9, 2, 1),
 ('Do Thi Hanh Nguyen','1988/08/09', 395839105, 8000000, '0827 802 122', 'nguyen@gmail.com', 'Hai Phong', 2, 4, 2),
 ('Tran Nhan Tam','1991/02/11', 698284010, 7000000, '0713 822 572', 'tam@gmail.com', 'Bac Giang', 4, 5, 3);
+-- ----------------------------------------------------------------------------------------------------------------
+insert into nhan_vien (ho_ten,ngay_sinh,cmnd_nhan_vien,luong,sdt,email,dia_chi,id_vi_tri,id_trinh_do,id_bo_phan)
+values 
+('Le Thanh Tung','1980/02/03', 668005001, 15000000, '0913 981 892', 'tung@gmail.com', 'Da Nang', 14, 1, 1);
+-- ----------------------------------------------------------------------------------------------------------------
+insert into nhan_vien (ho_ten,ngay_sinh,cmnd_nhan_vien,luong,sdt,email,dia_chi,id_vi_tri,id_trinh_do,id_bo_phan)
+values 
+('Ngo Thi Anh','1990/02/03', 668005501, 15000000, '0913 981 892', 'anh@gmail.com', 'Da Nang', 14, 1, 1);
+-- ----------------------------------------------------------------------------------------------------------------
