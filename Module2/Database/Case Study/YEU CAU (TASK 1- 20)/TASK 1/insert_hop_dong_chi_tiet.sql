@@ -68,3 +68,7 @@ insert into hop_dong_chi_tiet (so_luong,id_hop_dong,id_dich_vu_di_kem)
 values 
 (2, 63, 3);
 -- -------------------------------------------------------------------
+insert into hop_dong_chi_tiet (so_luong,id_hop_dong,id_dich_vu_di_kem)
+values 
+(1, 65, 6);
+-- -------------------------------------------------------------------
