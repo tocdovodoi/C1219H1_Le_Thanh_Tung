@@ -7,5 +7,5 @@
 -- --------------------------------------------
 use case_study_furama_resort;
 select * from khach_hang
-where
+where 
 (year(curdate())- year(ngay_sinh) between 18 and 50)  and dia_chi in('Da Nang', 'Quang Tri')
