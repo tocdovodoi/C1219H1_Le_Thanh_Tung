@@ -2,7 +2,7 @@ create database case_study_furama_resort;
 use case_study_furama_resort;
 -- table nhan vien
 CREATE TABLE nhan_vien (
-	id_nhan_vien INT NOT NULL primary key auto_increment,
+	id_nhan_vien INT NOT NULL primary key,
     ho_ten VARCHAR(45) NOT NULL,
     ngay_sinh DATE,
     cmnd_nhan_vien VARCHAR(45),
@@ -17,25 +17,25 @@ CREATE TABLE nhan_vien (
 
 -- table vi tri
 CREATE TABLE vi_tri (
-	id_vi_tri INT NOT NULL primary key auto_increment,
+	id_vi_tri INT NOT NULL primary key,
     ten_vi_tri VARCHAR(45)
 );
 
 -- table trinh do
 CREATE TABLE trinh_do (
-	id_trinh_do INT NOT NULL primary key auto_increment,
+	id_trinh_do INT NOT NULL primary key,
     trinh_do VARCHAR(45)
 );
 
 -- table bo phan
 CREATE TABLE bo_phan (
-	id_bo_phan INT NOT NULL primary key auto_increment,
+	id_bo_phan INT NOT NULL primary key,
     ten_bo_phan VARCHAR(45)
 );
 
 -- table khach hang
 CREATE TABLE khach_hang (
-	id_khach_hang INT NOT NULL primary key auto_increment,
+	id_khach_hang INT NOT NULL primary key,
     ho_ten VARCHAR(45),
     ngay_sinh DATE,
     cmnd_khach_hang VARCHAR(45),
@@ -47,16 +47,17 @@ CREATE TABLE khach_hang (
 
 -- table loai khach hang
 CREATE TABLE loai_khach (
-	id_loai_khach INT NOT NULL primary key auto_increment,
+	id_loai_khach INT NOT NULL primary key,
     ten_loai_khach VARCHAR(45)
 );
 
 -- table hop dong
 CREATE TABLE hop_dong (
-	id_hop_dong INT NOT NULL primary key auto_increment,
+	id_hop_dong INT NOT NULL primary key,
     ngay_lam_hop_dong DATE,
     ngay_ket_thuc DATE,
     tien_dat_coc INT,
+    tong_tien INT,
 	id_nhan_vien INT NOT NULL,
     id_khach_hang INT NOT NULL,
     id_dich_vu INT NOT NULL
@@ -64,7 +65,7 @@ CREATE TABLE hop_dong (
 
 -- table hop dong chi tiet
 CREATE TABLE hop_dong_chi_tiet (
-	id_hop_dong_chi_tiet INT NOT NULL primary key auto_increment,
+	id_hop_dong_chi_tiet INT NOT NULL primary key,
     so_luong INT,
 	id_hop_dong INT NOT NULL,
     id_dich_vu_di_kem INT NOT NULL
@@ -72,7 +73,7 @@ CREATE TABLE hop_dong_chi_tiet (
 
 -- table dich vu
 CREATE TABLE dich_vu (
-	id_dich_vu INT NOT NULL primary key auto_increment,
+	id_dich_vu INT NOT NULL primary key,
     ten_dich_vu VARCHAR(45),
     dien_tich INT,
     so_tang INT,
@@ -85,20 +86,20 @@ CREATE TABLE dich_vu (
 
 -- table kieu thue
 CREATE TABLE kieu_thue (
-	id_kieu_thue INT NOT NULL primary key auto_increment,
+	id_kieu_thue INT NOT NULL primary key,
     ten_kieu_thue VARCHAR(45),
     gia INT
 );
 
 -- table loai dich vu
 CREATE TABLE loai_dich_vu (
-	id_loai_dich_vu INT NOT NULL primary key auto_increment,
+	id_loai_dich_vu INT NOT NULL primary key,
     ten_loai_dich_vu VARCHAR(45)
 );
 
 -- table dich vu di kem
 CREATE TABLE dich_vu_di_kem (
-	id_dich_vu_di_kem INT NOT NULL primary key auto_increment,
+	id_dich_vu_di_kem INT NOT NULL primary key,
     ten_dich_vu_di_kem VARCHAR(45),
     gia INT,
     don_vi INT,
