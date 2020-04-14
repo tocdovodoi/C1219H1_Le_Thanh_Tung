@@ -34,8 +34,8 @@
                 <td><c:out value="${cus.name}"></c:out></td>
                 <td><c:out value="${cus.birthday}"></c:out></td>
                 <td><c:out value="${cus.address}"></c:out></td>
-<%--                <td><img src="https://static.gamehub.vn/img/files/2018/05/15/GameHubVN-top-nhung-cai-nhat-cua-cac-nhan-vat-trong-anime-manga-p2-1.jpg"></td>--%>
-                <td><img src="WEB-INF/image/1.jpg"></td>
+<%--                <td><img src="https://static.gamehub.vn/img/files/2018/05/15/GameHubVN-top-nhung-cai-nhat-cua-cac-nhan-vat-trong-anime-manga-p2-1.jpg" width="100px" height="100px"></td>--%>
+                <td><img src="static/image/1.jpg" width="100px" height="100px"></td>
             </tr>
         </c:forEach>
         </tbody>
